@@ -1,0 +1,1797 @@
+{
+  "$id": "1",
+  "Name": "ArtLaShip",
+  "ProjectType": ".NET Core REST API 1.0.0",
+  "LocalDestinationDirectory": "C:\\Users\\Administrator\\Documents\\Mercurial\\SWSWHackathon2019",
+  "Database": {
+    "$id": "2",
+    "Name": "",
+    "Schemas": [
+      {
+        "$id": "3",
+        "Name": "dbo",
+        "Tables": [
+          {
+            "$id": "4",
+            "Name": "Artist",
+            "Columns": [
+              {
+                "$id": "5",
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "6",
+                "Name": "externalId",
+                "DataType": "uniqueidentifier",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "7",
+                "Name": "name",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "8",
+                "Name": "bio",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 8000,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "9",
+                "Name": "facebook",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "10",
+                "Name": "twitter",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "11",
+                "Name": "website",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "12",
+                "Name": "soundCloud",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "13",
+                "Name": "aspNetUserId",
+                "DataType": "nvarchar",
+                "NumericPrecision": 0,
+                "MaxLength": 450,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "14",
+                "Name": "PK_Artist",
+                "TableName": "Artist",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "Columns": [
+                  {
+                    "$id": "15",
+                    "Name": "id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": true
+              }
+            ],
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "16",
+            "Name": "BankAccount",
+            "Columns": [
+              {
+                "$id": "17",
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "18",
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "19",
+                "Name": "routingNumber",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 24,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "20",
+                "Name": "accountNumber",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 24,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "21",
+                "Name": "PK_BankAccount",
+                "TableName": "BankAccount",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "Columns": [
+                  {
+                    "$id": "22",
+                    "Name": "id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "23",
+                "Name": "IX_BankAccount_artistId",
+                "TableName": "BankAccount",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "Columns": [
+                  {
+                    "$id": "24",
+                    "Name": "artistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "25",
+            "Name": "Transaction",
+            "Columns": [
+              {
+                "$id": "26",
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "27",
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "28",
+                "Name": "amount",
+                "DataType": "money",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "29",
+                "Name": "dateCreated",
+                "DataType": "datetime",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "30",
+                "Name": "stripeTransactionId",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "31",
+                "Name": "PK_Transaction",
+                "TableName": "Transaction",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "Columns": [
+                  {
+                    "$id": "32",
+                    "Name": "id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "33",
+                "Name": "IX_Transaction_artistId",
+                "TableName": "Transaction",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "Columns": [
+                  {
+                    "$id": "34",
+                    "Name": "artistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "35",
+            "Name": "Email",
+            "Columns": [
+              {
+                "$id": "36",
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "37",
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "38",
+                "Name": "email",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "39",
+                "Name": "dateCreated",
+                "DataType": "datetime",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "40",
+                "Name": "PK_Email",
+                "TableName": "Email",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "Columns": [
+                  {
+                    "$id": "41",
+                    "Name": "id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "42",
+                "Name": "IX_Email_artistId",
+                "TableName": "Email",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "Columns": [
+                  {
+                    "$id": "43",
+                    "Name": "artistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "DefaultConstraints": [],
+            "IsView": false
+          }
+        ],
+        "ForeignKeys": [
+          {
+            "$id": "44",
+            "Columns": [
+              {
+                "$id": "45",
+                "ForeignKeyTableName": "BankAccount",
+                "ForeignKeyColumnName": "artistId",
+                "PrimaryKeyTableName": "Artist",
+                "PrimaryKeyColumnName": "id",
+                "PrimaryKeySchemaName": "dbo",
+                "ForeignKeySchemaName": "dbo",
+                "Order": 0
+              }
+            ],
+            "ForeignKeyName": "fk_bankaccount_artistid_artist_id"
+          },
+          {
+            "$id": "46",
+            "Columns": [
+              {
+                "$id": "47",
+                "ForeignKeyTableName": "Email",
+                "ForeignKeyColumnName": "artistId",
+                "PrimaryKeyTableName": "Artist",
+                "PrimaryKeyColumnName": "id",
+                "PrimaryKeySchemaName": "dbo",
+                "ForeignKeySchemaName": "dbo",
+                "Order": 0
+              }
+            ],
+            "ForeignKeyName": "fk_email_artistid_artist_id"
+          },
+          {
+            "$id": "48",
+            "Columns": [
+              {
+                "$id": "49",
+                "ForeignKeyTableName": "Transaction",
+                "ForeignKeyColumnName": "artistId",
+                "PrimaryKeyTableName": "Artist",
+                "PrimaryKeyColumnName": "id",
+                "PrimaryKeySchemaName": "dbo",
+                "ForeignKeySchemaName": "dbo",
+                "Order": 0
+              }
+            ],
+            "ForeignKeyName": "fk_transaction_artistid_artist_id"
+          }
+        ]
+      }
+    ],
+    "Version": "1.0",
+    "DatabaseType": "MSSQL"
+  },
+  "Project": {
+    "$id": "50",
+    "Schemas": [
+      {
+        "$id": "51",
+        "AppSchemaName": "dbo",
+        "AppSchemaId": "6dbb7358-2d84-438e-97fa-52e2d7342a91",
+        "Tables": [
+          {
+            "$id": "52",
+            "AppTableName": "Artist",
+            "AppTableNamePlural": "Artists",
+            "AppDoNotProcess": false,
+            "AppTableId": "8a5f0bc0-594a-43a1-96db-77a56a823455",
+            "AppGenerationEnabled": true,
+            "Columns": [
+              {
+                "$id": "53",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "AspNetUserId",
+                "AppNamePlural": "AspNetUserIds",
+                "AppFieldType": "nvarchar",
+                "AppFieldMaxLength": 450,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Asp Net User",
+                "GenerationEnabled": true,
+                "Name": "aspNetUserId",
+                "DataType": "nvarchar",
+                "NumericPrecision": 0,
+                "MaxLength": 450,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "54",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Bio",
+                "AppNamePlural": "Bios",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 8000,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Bio",
+                "GenerationEnabled": true,
+                "Name": "bio",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 8000,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "55",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "ExternalId",
+                "AppNamePlural": "ExternalIds",
+                "AppFieldType": "uniqueidentifier",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "Guid",
+                "AppTypescriptType": "any",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "External",
+                "GenerationEnabled": true,
+                "Name": "externalId",
+                "DataType": "uniqueidentifier",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "56",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Facebook",
+                "AppNamePlural": "Facebooks",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Facebook",
+                "GenerationEnabled": true,
+                "Name": "facebook",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "57",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Id",
+                "AppNamePlural": "Ids",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 7,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": false,
+                "AppViewControlLabel": "Id",
+                "GenerationEnabled": true,
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "58",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Name",
+                "AppNamePlural": "Names",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Name",
+                "GenerationEnabled": true,
+                "Name": "name",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "59",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "SoundCloud",
+                "AppNamePlural": "SoundClouds",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Sound Cloud",
+                "GenerationEnabled": true,
+                "Name": "soundCloud",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "60",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Twitter",
+                "AppNamePlural": "Twitters",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Twitter",
+                "GenerationEnabled": true,
+                "Name": "twitter",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "61",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Website",
+                "AppNamePlural": "Websites",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "52"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Website",
+                "GenerationEnabled": true,
+                "Name": "website",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "62",
+                "Columns": [
+                  {
+                    "$id": "63",
+                    "Column": {
+                      "$ref": "57"
+                    },
+                    "Name": "Id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ById",
+                "ControllerRoute": "byId",
+                "AppName": "PK_Artist",
+                "Table": {
+                  "$ref": "52"
+                },
+                "GenerationEnabled": true,
+                "Name": "PK_Artist",
+                "TableName": "Artist",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "SchemaName": "dbo",
+                "IsUnique": true
+              }
+            ],
+            "Schema": {
+              "$ref": "51"
+            },
+            "AppParentTable": null,
+            "AppReferenceTable": false,
+            "AppIsView": false,
+            "AppControllerAttribute": "",
+            "AppGenerateBulkInsertMethod": true,
+            "AppGenerateCreateMethod": true,
+            "AppGenerateUpdateMethod": true,
+            "AppGenerateDeleteMethod": true,
+            "AppGenerateAllMethod": true,
+            "AppGenerateGetMethod": true,
+            "AppGeneratePatchMethod": true,
+            "AppBulkInsertMethodAttribute": "",
+            "AppCreateMethodAttribute": "",
+            "AppUpdateMethodAttribute": "",
+            "AppDeleteMethodAttribute": "",
+            "AppAllMethodAttribute": "",
+            "AppGetMethodAttribute": "",
+            "AppPatchMethodAttribute": "",
+            "ForeignKeyDisplayColumn": "this.aspNetUserId",
+            "AppViewLabel": "Artist",
+            "AppViewIcon": "",
+            "GenerationEnabled": true,
+            "Name": "Artist",
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "64",
+            "AppTableName": "BankAccount",
+            "AppTableNamePlural": "BankAccounts",
+            "AppDoNotProcess": false,
+            "AppTableId": "3130da28-4001-4d09-bf3e-3be4e23f0621",
+            "AppGenerationEnabled": true,
+            "Columns": [
+              {
+                "$id": "65",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "AccountNumber",
+                "AppNamePlural": "AccountNumbers",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 24,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "64"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Account Number",
+                "GenerationEnabled": true,
+                "Name": "accountNumber",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 24,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "66",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "ArtistId",
+                "AppNamePlural": "ArtistIds",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "64"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 8,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Artist",
+                "GenerationEnabled": true,
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "67",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Id",
+                "AppNamePlural": "Ids",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "64"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 7,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": false,
+                "AppViewControlLabel": "Id",
+                "GenerationEnabled": true,
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "68",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "RoutingNumber",
+                "AppNamePlural": "RoutingNumbers",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 24,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "64"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Routing Number",
+                "GenerationEnabled": true,
+                "Name": "routingNumber",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 24,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "69",
+                "Columns": [
+                  {
+                    "$id": "70",
+                    "Column": {
+                      "$ref": "67"
+                    },
+                    "Name": "Id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ById",
+                "ControllerRoute": "byId",
+                "AppName": "PK_BankAccount",
+                "Table": {
+                  "$ref": "64"
+                },
+                "GenerationEnabled": true,
+                "Name": "PK_BankAccount",
+                "TableName": "BankAccount",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "71",
+                "Columns": [
+                  {
+                    "$id": "72",
+                    "Column": {
+                      "$ref": "66"
+                    },
+                    "Name": "ArtistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ByArtistId",
+                "ControllerRoute": "byArtistId",
+                "AppName": "IX_BankAccount_artistId",
+                "Table": {
+                  "$ref": "64"
+                },
+                "GenerationEnabled": true,
+                "Name": "IX_BankAccount_artistId",
+                "TableName": "BankAccount",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "Schema": {
+              "$ref": "51"
+            },
+            "AppParentTable": null,
+            "AppReferenceTable": false,
+            "AppIsView": false,
+            "AppControllerAttribute": "",
+            "AppGenerateBulkInsertMethod": true,
+            "AppGenerateCreateMethod": true,
+            "AppGenerateUpdateMethod": true,
+            "AppGenerateDeleteMethod": true,
+            "AppGenerateAllMethod": true,
+            "AppGenerateGetMethod": true,
+            "AppGeneratePatchMethod": true,
+            "AppBulkInsertMethodAttribute": "",
+            "AppCreateMethodAttribute": "",
+            "AppUpdateMethodAttribute": "",
+            "AppDeleteMethodAttribute": "",
+            "AppAllMethodAttribute": "",
+            "AppGetMethodAttribute": "",
+            "AppPatchMethodAttribute": "",
+            "ForeignKeyDisplayColumn": "this.accountNumber",
+            "AppViewLabel": "Bank Account",
+            "AppViewIcon": "",
+            "GenerationEnabled": true,
+            "Name": "BankAccount",
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "73",
+            "AppTableName": "Transaction",
+            "AppTableNamePlural": "Transactions",
+            "AppDoNotProcess": false,
+            "AppTableId": "a395a4ed-09f7-4258-8f63-7fa1f2257090",
+            "AppGenerationEnabled": true,
+            "Columns": [
+              {
+                "$id": "74",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Amount",
+                "AppNamePlural": "Amounts",
+                "AppFieldType": "money",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "decimal",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "73"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 7,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Amount",
+                "GenerationEnabled": true,
+                "Name": "amount",
+                "DataType": "money",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "75",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "ArtistId",
+                "AppNamePlural": "ArtistIds",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "73"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 8,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Artist",
+                "GenerationEnabled": true,
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "76",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "DateCreated",
+                "AppNamePlural": "DateCreateds",
+                "AppFieldType": "datetime",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "DateTime",
+                "AppTypescriptType": "any",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "73"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 3,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Date Created",
+                "GenerationEnabled": true,
+                "Name": "dateCreated",
+                "DataType": "datetime",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "77",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Id",
+                "AppNamePlural": "Ids",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "73"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 7,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": false,
+                "AppViewControlLabel": "Id",
+                "GenerationEnabled": true,
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              },
+              {
+                "$id": "78",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "StripeTransactionId",
+                "AppNamePlural": "StripeTransactionIds",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "73"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Stripe Transaction",
+                "GenerationEnabled": true,
+                "Name": "stripeTransactionId",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "79",
+                "Columns": [
+                  {
+                    "$id": "80",
+                    "Column": {
+                      "$ref": "77"
+                    },
+                    "Name": "Id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ById",
+                "ControllerRoute": "byId",
+                "AppName": "PK_Transaction",
+                "Table": {
+                  "$ref": "73"
+                },
+                "GenerationEnabled": true,
+                "Name": "PK_Transaction",
+                "TableName": "Transaction",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "81",
+                "Columns": [
+                  {
+                    "$id": "82",
+                    "Column": {
+                      "$ref": "75"
+                    },
+                    "Name": "ArtistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ByArtistId",
+                "ControllerRoute": "byArtistId",
+                "AppName": "IX_Transaction_artistId",
+                "Table": {
+                  "$ref": "73"
+                },
+                "GenerationEnabled": true,
+                "Name": "IX_Transaction_artistId",
+                "TableName": "Transaction",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "Schema": {
+              "$ref": "51"
+            },
+            "AppParentTable": null,
+            "AppReferenceTable": false,
+            "AppIsView": false,
+            "AppControllerAttribute": "",
+            "AppGenerateBulkInsertMethod": true,
+            "AppGenerateCreateMethod": true,
+            "AppGenerateUpdateMethod": true,
+            "AppGenerateDeleteMethod": true,
+            "AppGenerateAllMethod": true,
+            "AppGenerateGetMethod": true,
+            "AppGeneratePatchMethod": true,
+            "AppBulkInsertMethodAttribute": "",
+            "AppCreateMethodAttribute": "",
+            "AppUpdateMethodAttribute": "",
+            "AppDeleteMethodAttribute": "",
+            "AppAllMethodAttribute": "",
+            "AppGetMethodAttribute": "",
+            "AppPatchMethodAttribute": "",
+            "ForeignKeyDisplayColumn": "this.amount",
+            "AppViewLabel": "Transaction",
+            "AppViewIcon": "",
+            "GenerationEnabled": true,
+            "Name": "Transaction",
+            "DefaultConstraints": [],
+            "IsView": false
+          },
+          {
+            "$id": "83",
+            "AppTableName": "Email",
+            "AppTableNamePlural": "Emails",
+            "AppDoNotProcess": false,
+            "AppTableId": "572442b7-68c0-44a6-a48c-dfd027625f95",
+            "AppGenerationEnabled": true,
+            "Columns": [
+              {
+                "$id": "84",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "ArtistId",
+                "AppNamePlural": "ArtistIds",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "83"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 8,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Artist",
+                "GenerationEnabled": true,
+                "Name": "artistId",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "85",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "DateCreated",
+                "AppNamePlural": "DateCreateds",
+                "AppFieldType": "datetime",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "DateTime",
+                "AppTypescriptType": "any",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "83"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 3,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Date Created",
+                "GenerationEnabled": true,
+                "Name": "dateCreated",
+                "DataType": "datetime",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "86",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Email1",
+                "AppNamePlural": "Emails",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "83"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Email",
+                "GenerationEnabled": true,
+                "Name": "email",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "87",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Id",
+                "AppNamePlural": "Ids",
+                "AppFieldType": "int",
+                "AppFieldMaxLength": 0,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "int",
+                "AppTypescriptType": "number",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "83"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 7,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": false,
+                "AppViewControlLabel": "Id",
+                "GenerationEnabled": true,
+                "Name": "id",
+                "DataType": "int",
+                "NumericPrecision": 0,
+                "MaxLength": 0,
+                "IsNullable": false,
+                "DatabaseGenerated": true
+              }
+            ],
+            "Constraints": [
+              {
+                "$id": "88",
+                "Columns": [
+                  {
+                    "$id": "89",
+                    "Column": {
+                      "$ref": "87"
+                    },
+                    "Name": "Id",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": true
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ById",
+                "ControllerRoute": "byId",
+                "AppName": "PK_Email",
+                "Table": {
+                  "$ref": "83"
+                },
+                "GenerationEnabled": true,
+                "Name": "PK_Email",
+                "TableName": "Email",
+                "IsPrimaryKey": true,
+                "ConstraintType": null,
+                "SchemaName": "dbo",
+                "IsUnique": true
+              },
+              {
+                "$id": "90",
+                "Columns": [
+                  {
+                    "$id": "91",
+                    "Column": {
+                      "$ref": "84"
+                    },
+                    "Name": "ArtistId",
+                    "Order": 0,
+                    "Descending": false,
+                    "IsIncludedColumn": false,
+                    "IsIdentity": false
+                  }
+                ],
+                "Virtual": false,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppShowInController": true,
+                "ControllerMethodName": "ByArtistId",
+                "ControllerRoute": "byArtistId",
+                "AppName": "IX_Email_artistId",
+                "Table": {
+                  "$ref": "83"
+                },
+                "GenerationEnabled": true,
+                "Name": "IX_Email_artistId",
+                "TableName": "Email",
+                "IsPrimaryKey": false,
+                "ConstraintType": "NONCLUSTERED",
+                "SchemaName": "dbo",
+                "IsUnique": false
+              }
+            ],
+            "Schema": {
+              "$ref": "51"
+            },
+            "AppParentTable": null,
+            "AppReferenceTable": false,
+            "AppIsView": false,
+            "AppControllerAttribute": "",
+            "AppGenerateBulkInsertMethod": true,
+            "AppGenerateCreateMethod": true,
+            "AppGenerateUpdateMethod": true,
+            "AppGenerateDeleteMethod": true,
+            "AppGenerateAllMethod": true,
+            "AppGenerateGetMethod": true,
+            "AppGeneratePatchMethod": true,
+            "AppBulkInsertMethodAttribute": "",
+            "AppCreateMethodAttribute": "",
+            "AppUpdateMethodAttribute": "",
+            "AppDeleteMethodAttribute": "",
+            "AppAllMethodAttribute": "",
+            "AppGetMethodAttribute": "",
+            "AppPatchMethodAttribute": "",
+            "ForeignKeyDisplayColumn": "this.artistId",
+            "AppViewLabel": "Email",
+            "AppViewIcon": "",
+            "GenerationEnabled": true,
+            "Name": "Email",
+            "DefaultConstraints": [],
+            "IsView": false
+          }
+        ],
+        "ForeignKeys": [
+          {
+            "$id": "92",
+            "Columns": [
+              {
+                "$id": "93",
+                "AppDoNotProcess": false,
+                "ForeignColumn": {
+                  "$ref": "66"
+                },
+                "PrimaryColumn": {
+                  "$ref": "57"
+                }
+              }
+            ],
+            "Virtual": false,
+            "AppDoNotProcess": false,
+            "ForeignKeyName": "FK_BankAccount_ArtistId_Artist_Id"
+          },
+          {
+            "$id": "94",
+            "Columns": [
+              {
+                "$id": "95",
+                "AppDoNotProcess": false,
+                "ForeignColumn": {
+                  "$ref": "84"
+                },
+                "PrimaryColumn": {
+                  "$ref": "57"
+                }
+              }
+            ],
+            "Virtual": false,
+            "AppDoNotProcess": false,
+            "ForeignKeyName": "FK_Email_ArtistId_Artist_Id"
+          },
+          {
+            "$id": "96",
+            "Columns": [
+              {
+                "$id": "97",
+                "AppDoNotProcess": false,
+                "ForeignColumn": {
+                  "$ref": "75"
+                },
+                "PrimaryColumn": {
+                  "$ref": "57"
+                }
+              }
+            ],
+            "Virtual": false,
+            "AppDoNotProcess": false,
+            "ForeignKeyName": "FK_Transaction_ArtistId_Artist_Id"
+          }
+        ],
+        "ReferenceForeignKeys": [],
+        "ApplicationApiContainer": {
+          "$ref": "50"
+        },
+        "Name": "dbo"
+      }
+    ],
+    "ApplicationVersion": "1.0",
+    "ApiSettings": {
+      "$id": "98",
+      "NamespacePrefix": "",
+      "IsMultiTenant": false,
+      "UseSoftDeletes": false
+    },
+    "Name": "",
+    "Version": "",
+    "DatabaseType": ""
+  },
+  "Settings": {
+    "$id": "99",
+    "SettingsVersion": "1.0",
+    "ApiSettings": {
+      "NamespacePrefix": "",
+      "IsMultiTenant": false,
+      "UseSoftDeletes": false
+    },
+    "TableParameterSettings": [],
+    "ColumnParameterSettings": [
+      {
+        "$id": "100",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "Website",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Website",
+        "AppName": "Website",
+        "AppNamePlural": "Websites"
+      },
+      {
+        "$id": "101",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "Twitter",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Twitter",
+        "AppName": "Twitter",
+        "AppNamePlural": "Twitters"
+      },
+      {
+        "$id": "102",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "SoundCloud",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Sound Cloud",
+        "AppName": "SoundCloud",
+        "AppNamePlural": "SoundClouds"
+      },
+      {
+        "$id": "103",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "Facebook",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Facebook",
+        "AppName": "Facebook",
+        "AppNamePlural": "Facebooks"
+      },
+      {
+        "$id": "104",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "ExternalId",
+        "AppCLRType": "Guid",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "Guid.NewGuid()",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": false,
+        "AppViewControlLabel": "External",
+        "AppName": "ExternalId",
+        "AppNamePlural": "ExternalIds"
+      },
+      {
+        "$id": "105",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "Bio",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Bio",
+        "AppName": "Bio",
+        "AppNamePlural": "Bios"
+      },
+      {
+        "$id": "106",
+        "Table": "Artist",
+        "Schema": "dbo",
+        "Column": "AspNetUserId",
+        "AppCLRType": "string",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "\"unset\"",
+        "AppViewControlType": 11,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Asp Net User",
+        "AppName": "AspNetUserId",
+        "AppNamePlural": "AspNetUserIds"
+      }
+    ],
+    "VirtualForeignKeys": [],
+    "ForeignKeyParameterSettings": [],
+    "VirtualConstraints": [],
+    "ConstraintParameterSettings": []
+  }
+}

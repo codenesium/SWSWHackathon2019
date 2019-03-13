@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+	<RootNamespace>ArtLaShipNS.Api.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../ArtLaShip.Api.Client/ArtLaShip.Api.Client.csproj" />
+    <ProjectReference Include="../ArtLaShip.Api.DataAccess/ArtLaShip.Api.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Codenesium.DataConversionExtensions" Version="2019.1.3" />
+    <PackageReference Include="MediatR" Version="6.0.0" />
+	<PackageReference Include="Microsoft.AspNetCore.App" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.0" />
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>ArtLaShip.Api.Services.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>ArtLaShip.Api.Services.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,9 @@
+language: csharp
+mono: none
+dotnet: 2.2
+script:
+   -  dotnet build ArtLaShip.Api.Web.csproj
+   -  dotnet test ArtLaShip.Api.DataAccess.csproj
+   -  dotnet test ArtLaShip.Api.Servicea.csproj
+   -  dotnet test ArtLaShip.Api.Client.csproj
+   -  dotnet test ArtLaShip.Api.Web.csproj
