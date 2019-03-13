@@ -279,7 +279,7 @@ ArtistComponentState
     
              <div>
              <span><Icon type="dollar"/>&nbsp;Venmo @{this.state.model!.venmo}</span>
-             &nbsp;&nbsp;&nbsp;
+             <br />
              <a href={"https://facebook.com/" + String(this.state.model!.facebook)} target="_blank"><Icon type="facebook"/>&nbsp;Facebook</a>
              &nbsp;&nbsp;&nbsp;
              <a href={"https://soundCloud.com/" +String(this.state.model!.soundCloud)} target="_blank"><Icon type="sound"/>&nbsp;Sound Cloud</a>
