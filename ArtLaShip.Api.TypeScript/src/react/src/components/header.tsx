@@ -64,11 +64,7 @@ export const wrapperHeader = (
                 <Link to={ClientRoutes.Emails} />
               </MenuItem>
 
-                 <MenuItem key="link">
-                <Icon type="link" />
-                <span>QR Code</span>
-                <Link to={'/qrcode'} />
-              </MenuItem>
+              
             </Menu>
           </Sider>
           <Layout>
