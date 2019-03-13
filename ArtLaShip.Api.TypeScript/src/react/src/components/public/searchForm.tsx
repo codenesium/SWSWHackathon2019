@@ -106,7 +106,7 @@ export default class SearchComponent extends React.Component<SearchComponentProp
             <Row>
               <Col span={12} offset={6}>  
               <div style={{'textAlign':'center','marginBottom':'35px'}}>
-                <img src={logo} alt="Logo" /> 
+                <img src={logo} alt="Logo" height={150} width={150} /> 
                 </div>
               <Select
               showSearch
