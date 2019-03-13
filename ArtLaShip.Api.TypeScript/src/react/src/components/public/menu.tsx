@@ -38,7 +38,7 @@ export const wrapperPublicMenu = (
                 }}
               >
                 <Icon type="home" />
-                <span>Home</span>
+                <span>ArtLaShip</span>
                 <Link to={'/'} />
               </MenuItem>
              
