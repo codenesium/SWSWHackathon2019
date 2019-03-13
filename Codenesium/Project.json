@@ -95,18 +95,27 @@
                 "MaxLength": 450,
                 "IsNullable": true,
                 "DatabaseGenerated": false
+              },
+              {
+                "$id": "14",
+                "Name": "venmo",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
               }
             ],
             "Constraints": [
               {
-                "$id": "14",
+                "$id": "15",
                 "Name": "PK_Artist",
                 "TableName": "Artist",
                 "IsPrimaryKey": true,
                 "ConstraintType": null,
                 "Columns": [
                   {
-                    "$id": "15",
+                    "$id": "16",
                     "Name": "id",
                     "Order": 0,
                     "Descending": false,
@@ -122,11 +131,11 @@
             "IsView": false
           },
           {
-            "$id": "16",
+            "$id": "17",
             "Name": "BankAccount",
             "Columns": [
               {
-                "$id": "17",
+                "$id": "18",
                 "Name": "id",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -135,7 +144,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "18",
+                "$id": "19",
                 "Name": "artistId",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -144,7 +153,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "19",
+                "$id": "20",
                 "Name": "routingNumber",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
@@ -153,7 +162,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "20",
+                "$id": "21",
                 "Name": "accountNumber",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
@@ -164,14 +173,14 @@
             ],
             "Constraints": [
               {
-                "$id": "21",
+                "$id": "22",
                 "Name": "PK_BankAccount",
                 "TableName": "BankAccount",
                 "IsPrimaryKey": true,
                 "ConstraintType": null,
                 "Columns": [
                   {
-                    "$id": "22",
+                    "$id": "23",
                     "Name": "id",
                     "Order": 0,
                     "Descending": false,
@@ -183,14 +192,14 @@
                 "IsUnique": true
               },
               {
-                "$id": "23",
+                "$id": "24",
                 "Name": "IX_BankAccount_artistId",
                 "TableName": "BankAccount",
                 "IsPrimaryKey": false,
                 "ConstraintType": "NONCLUSTERED",
                 "Columns": [
                   {
-                    "$id": "24",
+                    "$id": "25",
                     "Name": "artistId",
                     "Order": 0,
                     "Descending": false,
@@ -206,11 +215,11 @@
             "IsView": false
           },
           {
-            "$id": "25",
+            "$id": "26",
             "Name": "Transaction",
             "Columns": [
               {
-                "$id": "26",
+                "$id": "27",
                 "Name": "id",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -219,7 +228,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "27",
+                "$id": "28",
                 "Name": "artistId",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -228,7 +237,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "28",
+                "$id": "29",
                 "Name": "amount",
                 "DataType": "money",
                 "NumericPrecision": 0,
@@ -237,7 +246,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "29",
+                "$id": "30",
                 "Name": "dateCreated",
                 "DataType": "datetime",
                 "NumericPrecision": 0,
@@ -246,7 +255,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "30",
+                "$id": "31",
                 "Name": "stripeTransactionId",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
@@ -257,14 +266,14 @@
             ],
             "Constraints": [
               {
-                "$id": "31",
+                "$id": "32",
                 "Name": "PK_Transaction",
                 "TableName": "Transaction",
                 "IsPrimaryKey": true,
                 "ConstraintType": null,
                 "Columns": [
                   {
-                    "$id": "32",
+                    "$id": "33",
                     "Name": "id",
                     "Order": 0,
                     "Descending": false,
@@ -276,14 +285,14 @@
                 "IsUnique": true
               },
               {
-                "$id": "33",
+                "$id": "34",
                 "Name": "IX_Transaction_artistId",
                 "TableName": "Transaction",
                 "IsPrimaryKey": false,
                 "ConstraintType": "NONCLUSTERED",
                 "Columns": [
                   {
-                    "$id": "34",
+                    "$id": "35",
                     "Name": "artistId",
                     "Order": 0,
                     "Descending": false,
@@ -299,11 +308,11 @@
             "IsView": false
           },
           {
-            "$id": "35",
+            "$id": "36",
             "Name": "Email",
             "Columns": [
               {
-                "$id": "36",
+                "$id": "37",
                 "Name": "id",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -312,7 +321,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "37",
+                "$id": "38",
                 "Name": "artistId",
                 "DataType": "int",
                 "NumericPrecision": 0,
@@ -321,7 +330,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "38",
+                "$id": "39",
                 "Name": "emailValue",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
@@ -330,7 +339,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "39",
+                "$id": "40",
                 "Name": "dateCreated",
                 "DataType": "datetime",
                 "NumericPrecision": 0,
@@ -341,14 +350,14 @@
             ],
             "Constraints": [
               {
-                "$id": "40",
+                "$id": "41",
                 "Name": "PK_Email",
                 "TableName": "Email",
                 "IsPrimaryKey": true,
                 "ConstraintType": null,
                 "Columns": [
                   {
-                    "$id": "41",
+                    "$id": "42",
                     "Name": "id",
                     "Order": 0,
                     "Descending": false,
@@ -360,14 +369,14 @@
                 "IsUnique": true
               },
               {
-                "$id": "42",
+                "$id": "43",
                 "Name": "IX_Email_artistId",
                 "TableName": "Email",
                 "IsPrimaryKey": false,
                 "ConstraintType": "NONCLUSTERED",
                 "Columns": [
                   {
-                    "$id": "43",
+                    "$id": "44",
                     "Name": "artistId",
                     "Order": 0,
                     "Descending": false,
@@ -385,10 +394,10 @@
         ],
         "ForeignKeys": [
           {
-            "$id": "44",
+            "$id": "45",
             "Columns": [
               {
-                "$id": "45",
+                "$id": "46",
                 "ForeignKeyTableName": "BankAccount",
                 "ForeignKeyColumnName": "artistId",
                 "PrimaryKeyTableName": "Artist",
@@ -401,10 +410,10 @@
             "ForeignKeyName": "fk_bankaccount_artistid_artist_id"
           },
           {
-            "$id": "46",
+            "$id": "47",
             "Columns": [
               {
-                "$id": "47",
+                "$id": "48",
                 "ForeignKeyTableName": "Email",
                 "ForeignKeyColumnName": "artistId",
                 "PrimaryKeyTableName": "Artist",
@@ -417,10 +426,10 @@
             "ForeignKeyName": "fk_email_artistid_artist_id"
           },
           {
-            "$id": "48",
+            "$id": "49",
             "Columns": [
               {
-                "$id": "49",
+                "$id": "50",
                 "ForeignKeyTableName": "Transaction",
                 "ForeignKeyColumnName": "artistId",
                 "PrimaryKeyTableName": "Artist",
@@ -439,23 +448,23 @@
     "DatabaseType": "MSSQL"
   },
   "Project": {
-    "$id": "50",
+    "$id": "51",
     "Schemas": [
       {
-        "$id": "51",
+        "$id": "52",
         "AppSchemaName": "dbo",
-        "AppSchemaId": "1b3c56cc-65af-4982-9f3b-662f841c571e",
+        "AppSchemaId": "b126614b-0701-4c79-93c3-f25880946d8f",
         "Tables": [
           {
-            "$id": "52",
+            "$id": "53",
             "AppTableName": "Artist",
             "AppTableNamePlural": "Artists",
             "AppDoNotProcess": false,
-            "AppTableId": "9f47de3c-72c8-440e-98e7-b6cec3fbce9c",
+            "AppTableId": "fdfe9828-80c1-45c5-b77a-907b99a3dd4a",
             "AppGenerationEnabled": true,
             "Columns": [
               {
-                "$id": "53",
+                "$id": "54",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -472,7 +481,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -488,7 +497,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "54",
+                "$id": "55",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -505,7 +514,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -521,7 +530,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "55",
+                "$id": "56",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -538,7 +547,7 @@
                 "AppTypescriptType": "any",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -554,7 +563,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "56",
+                "$id": "57",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -571,7 +580,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -587,7 +596,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "57",
+                "$id": "58",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -604,7 +613,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 7,
@@ -620,7 +629,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "58",
+                "$id": "59",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -637,7 +646,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -653,7 +662,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "59",
+                "$id": "60",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -670,7 +679,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -686,7 +695,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "60",
+                "$id": "61",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -703,7 +712,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -719,7 +728,40 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "61",
+                "$id": "62",
+                "AppIsBooleanWithYNConversion": false,
+                "AppIsRequired": true,
+                "AppShowInRequestModel": true,
+                "AppShowInResponseModel": true,
+                "AppName": "Venmo",
+                "AppNamePlural": "Venmoes",
+                "AppFieldType": "varchar",
+                "AppFieldMaxLength": 128,
+                "AppDoNotProcess": false,
+                "AppGenerationEnabled": true,
+                "AppIsNullable": false,
+                "AppFieldId": "00000000-0000-0000-0000-000000000000",
+                "AppCLRType": "string",
+                "AppTypescriptType": "string",
+                "AppIsConcurrencyColumn": false,
+                "Table": {
+                  "$ref": "53"
+                },
+                "AppDefaultValue": null,
+                "AppViewControlType": 11,
+                "AppViewDisplayOrder": 0,
+                "AppDisplayInView": true,
+                "AppViewControlLabel": "Venmo",
+                "GenerationEnabled": true,
+                "Name": "venmo",
+                "DataType": "varchar",
+                "NumericPrecision": 0,
+                "MaxLength": 128,
+                "IsNullable": false,
+                "DatabaseGenerated": false
+              },
+              {
+                "$id": "63",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -736,7 +778,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -754,12 +796,12 @@
             ],
             "Constraints": [
               {
-                "$id": "62",
+                "$id": "64",
                 "Columns": [
                   {
-                    "$id": "63",
+                    "$id": "65",
                     "Column": {
-                      "$ref": "57"
+                      "$ref": "58"
                     },
                     "Name": "Id",
                     "Order": 0,
@@ -776,7 +818,7 @@
                 "ControllerRoute": "byId",
                 "AppName": "PK_Artist",
                 "Table": {
-                  "$ref": "52"
+                  "$ref": "53"
                 },
                 "GenerationEnabled": true,
                 "Name": "PK_Artist",
@@ -788,7 +830,7 @@
               }
             ],
             "Schema": {
-              "$ref": "51"
+              "$ref": "52"
             },
             "AppParentTable": null,
             "AppReferenceTable": false,
@@ -817,15 +859,15 @@
             "IsView": false
           },
           {
-            "$id": "64",
+            "$id": "66",
             "AppTableName": "BankAccount",
             "AppTableNamePlural": "BankAccounts",
             "AppDoNotProcess": false,
-            "AppTableId": "93cd50d3-84ad-4ba1-bfcc-1adcbb5cd675",
+            "AppTableId": "bc07b370-489b-418c-b2e1-20fc4df11646",
             "AppGenerationEnabled": true,
             "Columns": [
               {
-                "$id": "65",
+                "$id": "67",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -842,7 +884,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -858,7 +900,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "66",
+                "$id": "68",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -875,7 +917,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 8,
@@ -891,7 +933,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "67",
+                "$id": "69",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -908,7 +950,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 7,
@@ -924,7 +966,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "68",
+                "$id": "70",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -941,7 +983,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -959,12 +1001,12 @@
             ],
             "Constraints": [
               {
-                "$id": "69",
+                "$id": "71",
                 "Columns": [
                   {
-                    "$id": "70",
+                    "$id": "72",
                     "Column": {
-                      "$ref": "67"
+                      "$ref": "69"
                     },
                     "Name": "Id",
                     "Order": 0,
@@ -981,7 +1023,7 @@
                 "ControllerRoute": "byId",
                 "AppName": "PK_BankAccount",
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "GenerationEnabled": true,
                 "Name": "PK_BankAccount",
@@ -992,12 +1034,12 @@
                 "IsUnique": true
               },
               {
-                "$id": "71",
+                "$id": "73",
                 "Columns": [
                   {
-                    "$id": "72",
+                    "$id": "74",
                     "Column": {
-                      "$ref": "66"
+                      "$ref": "68"
                     },
                     "Name": "ArtistId",
                     "Order": 0,
@@ -1014,7 +1056,7 @@
                 "ControllerRoute": "byArtistId",
                 "AppName": "IX_BankAccount_artistId",
                 "Table": {
-                  "$ref": "64"
+                  "$ref": "66"
                 },
                 "GenerationEnabled": true,
                 "Name": "IX_BankAccount_artistId",
@@ -1026,7 +1068,7 @@
               }
             ],
             "Schema": {
-              "$ref": "51"
+              "$ref": "52"
             },
             "AppParentTable": null,
             "AppReferenceTable": false,
@@ -1055,15 +1097,15 @@
             "IsView": false
           },
           {
-            "$id": "73",
+            "$id": "75",
             "AppTableName": "Transaction",
             "AppTableNamePlural": "Transactions",
             "AppDoNotProcess": false,
-            "AppTableId": "2d5aef5e-bc91-48b1-81e5-eba693bc3f3e",
+            "AppTableId": "0a248348-cbf4-43d4-9504-9b8ce86d2c4d",
             "AppGenerationEnabled": true,
             "Columns": [
               {
-                "$id": "74",
+                "$id": "76",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1080,7 +1122,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 7,
@@ -1096,7 +1138,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "75",
+                "$id": "77",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1113,7 +1155,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 8,
@@ -1129,7 +1171,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "76",
+                "$id": "78",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1146,7 +1188,7 @@
                 "AppTypescriptType": "any",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 3,
@@ -1162,7 +1204,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "77",
+                "$id": "79",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1179,7 +1221,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 7,
@@ -1195,7 +1237,7 @@
                 "DatabaseGenerated": true
               },
               {
-                "$id": "78",
+                "$id": "80",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1212,7 +1254,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -1230,12 +1272,12 @@
             ],
             "Constraints": [
               {
-                "$id": "79",
+                "$id": "81",
                 "Columns": [
                   {
-                    "$id": "80",
+                    "$id": "82",
                     "Column": {
-                      "$ref": "77"
+                      "$ref": "79"
                     },
                     "Name": "Id",
                     "Order": 0,
@@ -1252,7 +1294,7 @@
                 "ControllerRoute": "byId",
                 "AppName": "PK_Transaction",
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "GenerationEnabled": true,
                 "Name": "PK_Transaction",
@@ -1263,12 +1305,12 @@
                 "IsUnique": true
               },
               {
-                "$id": "81",
+                "$id": "83",
                 "Columns": [
                   {
-                    "$id": "82",
+                    "$id": "84",
                     "Column": {
-                      "$ref": "75"
+                      "$ref": "77"
                     },
                     "Name": "ArtistId",
                     "Order": 0,
@@ -1285,7 +1327,7 @@
                 "ControllerRoute": "byArtistId",
                 "AppName": "IX_Transaction_artistId",
                 "Table": {
-                  "$ref": "73"
+                  "$ref": "75"
                 },
                 "GenerationEnabled": true,
                 "Name": "IX_Transaction_artistId",
@@ -1297,7 +1339,7 @@
               }
             ],
             "Schema": {
-              "$ref": "51"
+              "$ref": "52"
             },
             "AppParentTable": null,
             "AppReferenceTable": false,
@@ -1326,15 +1368,15 @@
             "IsView": false
           },
           {
-            "$id": "83",
+            "$id": "85",
             "AppTableName": "Email",
             "AppTableNamePlural": "Emails",
             "AppDoNotProcess": false,
-            "AppTableId": "dbb8c481-6018-4074-8684-22efd111d5b7",
+            "AppTableId": "04ed87e2-2bf7-4563-aa79-9d591ee44185",
             "AppGenerationEnabled": true,
             "Columns": [
               {
-                "$id": "84",
+                "$id": "86",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1351,7 +1393,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 8,
@@ -1367,7 +1409,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "85",
+                "$id": "87",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": false,
                 "AppShowInRequestModel": true,
@@ -1384,7 +1426,7 @@
                 "AppTypescriptType": "any",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 3,
@@ -1400,7 +1442,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "86",
+                "$id": "88",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1417,7 +1459,7 @@
                 "AppTypescriptType": "string",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 11,
@@ -1433,7 +1475,7 @@
                 "DatabaseGenerated": false
               },
               {
-                "$id": "87",
+                "$id": "89",
                 "AppIsBooleanWithYNConversion": false,
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
@@ -1450,7 +1492,7 @@
                 "AppTypescriptType": "number",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "AppDefaultValue": null,
                 "AppViewControlType": 7,
@@ -1468,12 +1510,12 @@
             ],
             "Constraints": [
               {
-                "$id": "88",
+                "$id": "90",
                 "Columns": [
                   {
-                    "$id": "89",
+                    "$id": "91",
                     "Column": {
-                      "$ref": "87"
+                      "$ref": "89"
                     },
                     "Name": "Id",
                     "Order": 0,
@@ -1490,7 +1532,7 @@
                 "ControllerRoute": "byId",
                 "AppName": "PK_Email",
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "GenerationEnabled": true,
                 "Name": "PK_Email",
@@ -1501,12 +1543,12 @@
                 "IsUnique": true
               },
               {
-                "$id": "90",
+                "$id": "92",
                 "Columns": [
                   {
-                    "$id": "91",
+                    "$id": "93",
                     "Column": {
-                      "$ref": "84"
+                      "$ref": "86"
                     },
                     "Name": "ArtistId",
                     "Order": 0,
@@ -1523,7 +1565,7 @@
                 "ControllerRoute": "byArtistId",
                 "AppName": "IX_Email_artistId",
                 "Table": {
-                  "$ref": "83"
+                  "$ref": "85"
                 },
                 "GenerationEnabled": true,
                 "Name": "IX_Email_artistId",
@@ -1535,7 +1577,7 @@
               }
             ],
             "Schema": {
-              "$ref": "51"
+              "$ref": "52"
             },
             "AppParentTable": null,
             "AppReferenceTable": false,
@@ -1566,16 +1608,16 @@
         ],
         "ForeignKeys": [
           {
-            "$id": "92",
+            "$id": "94",
             "Columns": [
               {
-                "$id": "93",
+                "$id": "95",
                 "AppDoNotProcess": false,
                 "ForeignColumn": {
-                  "$ref": "66"
+                  "$ref": "68"
                 },
                 "PrimaryColumn": {
-                  "$ref": "57"
+                  "$ref": "58"
                 }
               }
             ],
@@ -1584,16 +1626,16 @@
             "ForeignKeyName": "FK_BankAccount_ArtistId_Artist_Id"
           },
           {
-            "$id": "94",
+            "$id": "96",
             "Columns": [
               {
-                "$id": "95",
+                "$id": "97",
                 "AppDoNotProcess": false,
                 "ForeignColumn": {
-                  "$ref": "84"
+                  "$ref": "86"
                 },
                 "PrimaryColumn": {
-                  "$ref": "57"
+                  "$ref": "58"
                 }
               }
             ],
@@ -1602,16 +1644,16 @@
             "ForeignKeyName": "FK_Email_ArtistId_Artist_Id"
           },
           {
-            "$id": "96",
+            "$id": "98",
             "Columns": [
               {
-                "$id": "97",
+                "$id": "99",
                 "AppDoNotProcess": false,
                 "ForeignColumn": {
-                  "$ref": "75"
+                  "$ref": "77"
                 },
                 "PrimaryColumn": {
-                  "$ref": "57"
+                  "$ref": "58"
                 }
               }
             ],
@@ -1622,14 +1664,14 @@
         ],
         "ReferenceForeignKeys": [],
         "ApplicationApiContainer": {
-          "$ref": "50"
+          "$ref": "51"
         },
         "Name": "dbo"
       }
     ],
     "ApplicationVersion": "1.0",
     "ApiSettings": {
-      "$id": "98",
+      "$id": "100",
       "NamespacePrefix": "",
       "IsMultiTenant": false,
       "UseSoftDeletes": false
@@ -1639,7 +1681,7 @@
     "DatabaseType": ""
   },
   "Settings": {
-    "$id": "99",
+    "$id": "101",
     "SettingsVersion": "1.0",
     "ApiSettings": {
       "NamespacePrefix": "",
@@ -1648,7 +1690,7 @@
     },
     "TableParameterSettings": [
       {
-        "$id": "100",
+        "$id": "102",
         "Table": "Artist",
         "Schema": "dbo",
         "AppDoNotProcess": false,
@@ -1675,7 +1717,7 @@
         "AppViewIcon": ""
       },
       {
-        "$id": "101",
+        "$id": "103",
         "Table": "Email",
         "Schema": "dbo",
         "AppDoNotProcess": false,
@@ -1704,7 +1746,7 @@
     ],
     "ColumnParameterSettings": [
       {
-        "$id": "102",
+        "$id": "104",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "Website",
@@ -1724,7 +1766,7 @@
         "AppNamePlural": "Websites"
       },
       {
-        "$id": "103",
+        "$id": "105",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "Twitter",
@@ -1744,7 +1786,7 @@
         "AppNamePlural": "Twitters"
       },
       {
-        "$id": "104",
+        "$id": "106",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "SoundCloud",
@@ -1764,7 +1806,7 @@
         "AppNamePlural": "SoundClouds"
       },
       {
-        "$id": "105",
+        "$id": "107",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "Facebook",
@@ -1784,7 +1826,7 @@
         "AppNamePlural": "Facebooks"
       },
       {
-        "$id": "106",
+        "$id": "108",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "ExternalId",
@@ -1804,7 +1846,7 @@
         "AppNamePlural": "ExternalIds"
       },
       {
-        "$id": "107",
+        "$id": "109",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "Bio",
@@ -1824,7 +1866,7 @@
         "AppNamePlural": "Bios"
       },
       {
-        "$id": "108",
+        "$id": "110",
         "Table": "Artist",
         "Schema": "dbo",
         "Column": "AspNetUserId",
@@ -1844,7 +1886,7 @@
         "AppNamePlural": "AspNetUserIds"
       },
       {
-        "$id": "109",
+        "$id": "111",
         "Table": "Email",
         "Schema": "dbo",
         "Column": "Email1",
@@ -1864,7 +1906,7 @@
         "AppNamePlural": "EmailValues"
       },
       {
-        "$id": "110",
+        "$id": "112",
         "Table": "Email",
         "Schema": "dbo",
         "Column": "DateCreated",

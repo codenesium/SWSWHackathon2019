@@ -62,7 +62,7 @@ namespace ArtLaShipNS.Api.Web
 			var charge = charges.Create(new ChargeCreateOptions
 			{
 				Amount = model.AmountInCents,
-				Description = "Band tip",
+				Description = "Artist tip",
 				Currency = "usd",
 				CustomerId = customer.Id
 			});

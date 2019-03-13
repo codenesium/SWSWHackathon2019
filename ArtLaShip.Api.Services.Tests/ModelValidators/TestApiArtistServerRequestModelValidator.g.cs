@@ -193,6 +193,54 @@ namespace ArtLaShipNS.Api.Services.Tests
 		}
 
 		[Fact]
+		public async void Venmo_Create_null()
+		{
+			Mock<IArtistRepository> artistRepository = new Mock<IArtistRepository>();
+			artistRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Artist()));
+
+			var validator = new ApiArtistServerRequestModelValidator(artistRepository.Object);
+			await validator.ValidateCreateAsync(new ApiArtistServerRequestModel());
+
+			validator.ShouldHaveValidationErrorFor(x => x.Venmo, null as string);
+		}
+
+		[Fact]
+		public async void Venmo_Update_null()
+		{
+			Mock<IArtistRepository> artistRepository = new Mock<IArtistRepository>();
+			artistRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Artist()));
+
+			var validator = new ApiArtistServerRequestModelValidator(artistRepository.Object);
+			await validator.ValidateUpdateAsync(default(int), new ApiArtistServerRequestModel());
+
+			validator.ShouldHaveValidationErrorFor(x => x.Venmo, null as string);
+		}
+
+		[Fact]
+		public async void Venmo_Create_length()
+		{
+			Mock<IArtistRepository> artistRepository = new Mock<IArtistRepository>();
+			artistRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Artist()));
+
+			var validator = new ApiArtistServerRequestModelValidator(artistRepository.Object);
+			await validator.ValidateCreateAsync(new ApiArtistServerRequestModel());
+
+			validator.ShouldHaveValidationErrorFor(x => x.Venmo, new string('A', 129));
+		}
+
+		[Fact]
+		public async void Venmo_Update_length()
+		{
+			Mock<IArtistRepository> artistRepository = new Mock<IArtistRepository>();
+			artistRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Artist()));
+
+			var validator = new ApiArtistServerRequestModelValidator(artistRepository.Object);
+			await validator.ValidateUpdateAsync(default(int), new ApiArtistServerRequestModel());
+
+			validator.ShouldHaveValidationErrorFor(x => x.Venmo, new string('A', 129));
+		}
+
+		[Fact]
 		public async void Website_Create_length()
 		{
 			Mock<IArtistRepository> artistRepository = new Mock<IArtistRepository>();
@@ -219,5 +267,5 @@ namespace ArtLaShipNS.Api.Services.Tests
 }
 
 /*<Codenesium>
-    <Hash>01753ada78e5cdf69f568752caa37d9c</Hash>
+    <Hash>0739887d0ea62aed9d0dc3e75c794d45</Hash>
 </Codenesium>*/

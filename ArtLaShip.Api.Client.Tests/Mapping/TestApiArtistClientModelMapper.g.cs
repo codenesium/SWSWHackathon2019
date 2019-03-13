@@ -15,7 +15,7 @@ namespace ArtLaShipNS.Api.Client.Tests
 		{
 			var mapper = new ApiArtistModelMapper();
 			var model = new ApiArtistClientRequestModel();
-			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			ApiArtistClientResponseModel response = mapper.MapClientRequestToResponse(1, model);
 			response.Should().NotBeNull();
 			response.AspNetUserId.Should().Be("A");
@@ -25,6 +25,7 @@ namespace ArtLaShipNS.Api.Client.Tests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -33,7 +34,7 @@ namespace ArtLaShipNS.Api.Client.Tests
 		{
 			var mapper = new ApiArtistModelMapper();
 			var model = new ApiArtistClientResponseModel();
-			model.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			ApiArtistClientRequestModel response = mapper.MapClientResponseToRequest(model);
 			response.Should().NotBeNull();
 			response.AspNetUserId.Should().Be("A");
@@ -43,11 +44,12 @@ namespace ArtLaShipNS.Api.Client.Tests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>6dfcc07a286e6f8824243fbe5d01ddbb</Hash>
+    <Hash>158d286bda55b072fdc6a198cebbb2c6</Hash>
 </Codenesium>*/

@@ -188,6 +188,18 @@ class ArtistEditComponent extends React.Component<
               ( <Input placeholder={"Bio"} /> )}
               </Form.Item>
 
+				<Form.Item>
+              <label htmlFor='venmo'>Venmo</label>
+              <br />             
+              {getFieldDecorator('venmo', {
+              rules:[{ max: 128, message: 'Exceeds max length of 128' },
+],
+              
+              })
+              ( <Input placeholder={"Venmo"} addonBefore="@" /> )}
+              </Form.Item>
+
+
 						<Form.Item>
               <label htmlFor='facebook'>Facebook</label>
               <br />             

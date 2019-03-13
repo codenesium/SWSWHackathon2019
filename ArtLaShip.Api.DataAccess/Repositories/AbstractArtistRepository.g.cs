@@ -43,6 +43,7 @@ namespace ArtLaShipNS.Api.DataAccess
 				                  x.Name.StartsWith(query) ||
 				                  x.SoundCloud.StartsWith(query) ||
 				                  x.Twitter.StartsWith(query) ||
+				                  x.Venmo.StartsWith(query) ||
 				                  x.Website.StartsWith(query),
 				                  limit,
 				                  offset);
@@ -144,5 +145,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>02ccd66a12c998e312eb41507d0e336b</Hash>
+    <Hash>6e3b71c24d3d4e17b99a24953f1da476</Hash>
 </Codenesium>*/

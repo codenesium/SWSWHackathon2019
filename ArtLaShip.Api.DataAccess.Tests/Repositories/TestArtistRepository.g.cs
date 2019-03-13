@@ -73,7 +73,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			var repository = new ArtistRepository(loggerMoc.Object, context);
 
 			Artist entity = new Artist();
-			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			context.Set<Artist>().Add(entity);
 			await context.SaveChangesAsync();
 
@@ -90,7 +90,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			var repository = new ArtistRepository(loggerMoc.Object, context);
 
 			var entity = new Artist();
-			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			await repository.Create(entity);
 
 			var records = await context.Set<Artist>().Where(x => true).ToListAsync();
@@ -105,7 +105,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			ApplicationDbContext context = ArtistRepositoryMoc.GetContext();
 			var repository = new ArtistRepository(loggerMoc.Object, context);
 			Artist entity = new Artist();
-			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			context.Set<Artist>().Add(entity);
 			await context.SaveChangesAsync();
 
@@ -125,7 +125,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			ApplicationDbContext context = ArtistRepositoryMoc.GetContext();
 			var repository = new ArtistRepository(loggerMoc.Object, context);
 			Artist entity = new Artist();
-			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			context.Set<Artist>().Add(entity);
 			await context.SaveChangesAsync();
 
@@ -145,7 +145,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			ApplicationDbContext context = ArtistRepositoryMoc.GetContext();
 			var repository = new ArtistRepository(loggerMoc.Object, context);
 			Artist entity = new Artist();
-			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			entity.SetProperties(default(int), "B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			context.Set<Artist>().Add(entity);
 			await context.SaveChangesAsync();
 
@@ -174,5 +174,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>e9acc6fa64b75fab7a373682b3f590e1</Hash>
+    <Hash>7240ac519b68efc9781d0b6505ca37af</Hash>
 </Codenesium>*/

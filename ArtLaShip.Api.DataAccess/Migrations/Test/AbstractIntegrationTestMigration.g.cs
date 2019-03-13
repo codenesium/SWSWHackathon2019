@@ -19,7 +19,7 @@ namespace ArtLaShipNS.Api.DataAccess
 		public virtual async Task Migrate()
 		{
 			var artistItem1 = new Artist();
-			artistItem1.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			artistItem1.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			this.Context.Artists.Add(artistItem1);
 
 			var bankAccountItem1 = new BankAccount();
@@ -40,5 +40,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>7f3d8b5951fb9e7cdb023485a9a2cef8</Hash>
+    <Hash>94a5a5a73fb9d5603f81a49dbb18b911</Hash>
 </Codenesium>*/

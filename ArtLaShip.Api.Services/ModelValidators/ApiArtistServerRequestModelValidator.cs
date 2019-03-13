@@ -22,6 +22,7 @@ namespace ArtLaShipNS.Api.Services
 			this.NameRules();
 			this.SoundCloudRules();
 			this.TwitterRules();
+			this.VenmoRules();
 			this.WebsiteRules();
 			return await this.ValidateAsync(model);
 		}
@@ -35,6 +36,7 @@ namespace ArtLaShipNS.Api.Services
 			this.NameRules();
 			this.SoundCloudRules();
 			this.TwitterRules();
+			this.VenmoRules();
 			this.WebsiteRules();
 			return await this.ValidateAsync(model, id);
 		}
@@ -47,5 +49,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>21ea3dd105eee2da1df8d3dab2eee930</Hash>
+    <Hash>2ad304f635184713e565d9fabf84f2b0</Hash>
 </Codenesium>*/

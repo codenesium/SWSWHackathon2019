@@ -16,6 +16,7 @@ namespace ArtLaShipNS.Api.Client
 			string name,
 			string soundCloud,
 			string twitter,
+			string venmo,
 			string website)
 		{
 			this.Id = id;
@@ -26,6 +27,7 @@ namespace ArtLaShipNS.Api.Client
 			this.Name = name;
 			this.SoundCloud = soundCloud;
 			this.Twitter = twitter;
+			this.Venmo = venmo;
 			this.Website = website;
 		}
 
@@ -54,10 +56,13 @@ namespace ArtLaShipNS.Api.Client
 		public string Twitter { get; private set; }
 
 		[JsonProperty]
+		public string Venmo { get; private set; }
+
+		[JsonProperty]
 		public string Website { get; private set; }
 	}
 }
 
 /*<Codenesium>
-    <Hash>48d2e6e86923b589bc8cf9f9579e7fec</Hash>
+    <Hash>20facb81c766a4aaba50c248cdbd8d4e</Hash>
 </Codenesium>*/

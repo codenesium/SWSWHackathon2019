@@ -23,6 +23,7 @@ namespace ArtLaShipNS.Api.Services
 			string name,
 			string soundCloud,
 			string twitter,
+			string venmo,
 			string website)
 		{
 			this.AspNetUserId = aspNetUserId;
@@ -32,6 +33,7 @@ namespace ArtLaShipNS.Api.Services
 			this.Name = name;
 			this.SoundCloud = soundCloud;
 			this.Twitter = twitter;
+			this.Venmo = venmo;
 			this.Website = website;
 		}
 
@@ -57,11 +59,15 @@ namespace ArtLaShipNS.Api.Services
 		[JsonProperty]
 		public string Twitter { get; private set; } = default(string);
 
+		[Required]
+		[JsonProperty]
+		public string Venmo { get; private set; } = default(string);
+
 		[JsonProperty]
 		public string Website { get; private set; } = default(string);
 	}
 }
 
 /*<Codenesium>
-    <Hash>cda6895abf736ea09ceafad1d12f1051</Hash>
+    <Hash>37c7b87be0c4b8f86a9352ac02ef97bd</Hash>
 </Codenesium>*/

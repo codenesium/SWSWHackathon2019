@@ -25,6 +25,7 @@ export default class TransactionMapper {
         dto.artistIdNavigation.name,
         dto.artistIdNavigation.soundCloud,
         dto.artistIdNavigation.twitter,
+        dto.artistIdNavigation.venmo,
         dto.artistIdNavigation.website
       );
     }
@@ -49,5 +50,5 @@ export default class TransactionMapper {
 
 
 /*<Codenesium>
-    <Hash>094abc0e7b68c77a977756e9ac248777</Hash>
+    <Hash>cc185f1ec6c5b6e33183e4522ead7921</Hash>
 </Codenesium>*/

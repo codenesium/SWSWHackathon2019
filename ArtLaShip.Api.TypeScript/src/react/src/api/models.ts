@@ -7,6 +7,7 @@ id:number;
 name:string;
 soundCloud:string;
 twitter:string;
+venmo:string;
 website:string;
 
 	
@@ -19,11 +20,12 @@ this.id = 0;
 this.name = '';
 this.soundCloud = '';
 this.twitter = '';
+this.venmo = '';
 this.website = '';
 
 				}
 
-				setProperties(aspNetUserId : string,bio : string,externalId : any,facebook : string,id : number,name : string,soundCloud : string,twitter : string,website : string) : void
+				setProperties(aspNetUserId : string,bio : string,externalId : any,facebook : string,id : number,name : string,soundCloud : string,twitter : string,venmo : string,website : string) : void
 				{
 					this.aspNetUserId = aspNetUserId;
 this.bio = bio;
@@ -33,6 +35,7 @@ this.id = id;
 this.name = name;
 this.soundCloud = soundCloud;
 this.twitter = twitter;
+this.venmo = venmo;
 this.website = website;
 
 				}
@@ -47,6 +50,7 @@ id:number;
 name:string;
 soundCloud:string;
 twitter:string;
+venmo:string;
 website:string;
 
 	
@@ -59,11 +63,12 @@ this.id = 0;
 this.name = '';
 this.soundCloud = '';
 this.twitter = '';
+this.venmo = '';
 this.website = '';
 
 				}
 
-				setProperties(aspNetUserId : string,bio : string,externalId : any,facebook : string,id : number,name : string,soundCloud : string,twitter : string,website : string) : void
+				setProperties(aspNetUserId : string,bio : string,externalId : any,facebook : string,id : number,name : string,soundCloud : string,twitter : string,venmo : string,website : string) : void
 				{
 					this.aspNetUserId = aspNetUserId;
 this.bio = bio;
@@ -73,6 +78,7 @@ this.id = id;
 this.name = name;
 this.soundCloud = soundCloud;
 this.twitter = twitter;
+this.venmo = venmo;
 this.website = website;
 
 				}
@@ -256,5 +262,5 @@ this.id = id;
 			}
 
 /*<Codenesium>
-    <Hash>fdb6ab2a9043bfab451e6a864185122b</Hash>
+    <Hash>55e3fa430db37f7a33a5d62758902f4d</Hash>
 </Codenesium>*/

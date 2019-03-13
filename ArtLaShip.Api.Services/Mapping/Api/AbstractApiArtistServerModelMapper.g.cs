@@ -21,6 +21,7 @@ namespace ArtLaShipNS.Api.Services
 			                       request.Name,
 			                       request.SoundCloud,
 			                       request.Twitter,
+			                       request.Venmo,
 			                       request.Website);
 			return response;
 		}
@@ -37,6 +38,7 @@ namespace ArtLaShipNS.Api.Services
 				response.Name,
 				response.SoundCloud,
 				response.Twitter,
+				response.Venmo,
 				response.Website);
 			return request;
 		}
@@ -53,6 +55,7 @@ namespace ArtLaShipNS.Api.Services
 				response.Name,
 				response.SoundCloud,
 				response.Twitter,
+				response.Venmo,
 				response.Website);
 			return request;
 		}
@@ -67,6 +70,7 @@ namespace ArtLaShipNS.Api.Services
 			patch.Replace(x => x.Name, model.Name);
 			patch.Replace(x => x.SoundCloud, model.SoundCloud);
 			patch.Replace(x => x.Twitter, model.Twitter);
+			patch.Replace(x => x.Venmo, model.Venmo);
 			patch.Replace(x => x.Website, model.Website);
 			return patch;
 		}
@@ -74,5 +78,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>c32495c974021f463f835bc600c729de</Hash>
+    <Hash>bc94ab208c2b293f7b92945d7b55f555</Hash>
 </Codenesium>*/

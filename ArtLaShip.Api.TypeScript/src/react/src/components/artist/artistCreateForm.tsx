@@ -187,6 +187,18 @@ class ArtistCreateComponent extends React.Component<
               </Form.Item>
 
 						<Form.Item>
+              <label htmlFor='venmo'>Venmo</label>
+              <br />             
+              {getFieldDecorator('venmo', {
+              rules:[{ required: true, message: 'Required' },
+{ max: 128, message: 'Exceeds max length of 128' },
+],
+              
+              })
+              ( <Input placeholder={"Venmo"} /> )}
+              </Form.Item>
+
+						<Form.Item>
               <label htmlFor='website'>Website</label>
               <br />             
               {getFieldDecorator('website', {
@@ -214,5 +226,5 @@ class ArtistCreateComponent extends React.Component<
 export const WrappedArtistCreateComponent = Form.create({ name: 'Artist Create' })(ArtistCreateComponent);
 
 /*<Codenesium>
-    <Hash>c9c236c629f8404f8302688d136e75ee</Hash>
+    <Hash>585f843f384ecc4d790054671953bfbe</Hash>
 </Codenesium>*/

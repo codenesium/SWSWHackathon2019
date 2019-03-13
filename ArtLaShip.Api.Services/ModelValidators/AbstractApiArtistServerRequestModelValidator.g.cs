@@ -61,6 +61,12 @@ namespace ArtLaShipNS.Api.Services
 			this.RuleFor(x => x.Twitter).Length(0, 128).WithErrorCode(ValidationErrorCodes.ViolatesLengthRule);
 		}
 
+		public virtual void VenmoRules()
+		{
+			this.RuleFor(x => x.Venmo).NotNull().WithErrorCode(ValidationErrorCodes.ViolatesShouldNotBeNullRule);
+			this.RuleFor(x => x.Venmo).Length(0, 128).WithErrorCode(ValidationErrorCodes.ViolatesLengthRule);
+		}
+
 		public virtual void WebsiteRules()
 		{
 			this.RuleFor(x => x.Website).Length(0, 128).WithErrorCode(ValidationErrorCodes.ViolatesLengthRule);
@@ -69,5 +75,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>0f00b262e7518751f55b45e73c411689</Hash>
+    <Hash>6a3b70a9d2f51df38fb300b6600df757</Hash>
 </Codenesium>*/

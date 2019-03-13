@@ -44,6 +44,7 @@ namespace ArtLaShipNS.Api.Services
 					item.ArtistIdNavigation.Name,
 					item.ArtistIdNavigation.SoundCloud,
 					item.ArtistIdNavigation.Twitter,
+					item.ArtistIdNavigation.Venmo,
 					item.ArtistIdNavigation.Website);
 
 				model.SetArtistIdNavigation(artistIdModel);
@@ -68,5 +69,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>62559aadb87c810d5062e9aa926f0161</Hash>
+    <Hash>93721f4bb0ee5aaf819dc7d073b07591</Hash>
 </Codenesium>*/

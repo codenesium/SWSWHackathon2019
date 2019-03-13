@@ -132,6 +132,10 @@ class ArtistDetailComponent extends React.Component<
               <p>{String(this.state.model!.twitter)}</p>
             </div>
             <div>
+              <h3>Venmo</h3>
+              <p>{String(this.state.model!.venmo)}</p>
+            </div>
+            <div>
               <h3>Website</h3>
               <p>{String(this.state.model!.website)}</p>
             </div>
@@ -199,5 +203,5 @@ export const WrappedArtistDetailComponent = Form.create({
 
 
 /*<Codenesium>
-    <Hash>7751142bb19ea80d3aa099eaa7070161</Hash>
+    <Hash>621b5fde267174d4df580c3df5a8be36</Hash>
 </Codenesium>*/

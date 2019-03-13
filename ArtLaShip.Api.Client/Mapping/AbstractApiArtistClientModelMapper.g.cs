@@ -19,6 +19,7 @@ namespace ArtLaShipNS.Api.Client
 			                       request.Name,
 			                       request.SoundCloud,
 			                       request.Twitter,
+			                       request.Venmo,
 			                       request.Website);
 			return response;
 		}
@@ -35,6 +36,7 @@ namespace ArtLaShipNS.Api.Client
 				response.Name,
 				response.SoundCloud,
 				response.Twitter,
+				response.Venmo,
 				response.Website);
 			return request;
 		}
@@ -42,5 +44,5 @@ namespace ArtLaShipNS.Api.Client
 }
 
 /*<Codenesium>
-    <Hash>a4bc3367c4bb81341ac69cf8d9f3cce7</Hash>
+    <Hash>f4e46bfc88ff4e0124c5ad37dcd3c05d</Hash>
 </Codenesium>*/

@@ -22,6 +22,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			string name,
 			string soundCloud,
 			string twitter,
+			string venmo,
 			string website)
 		{
 			this.Id = id;
@@ -32,6 +33,7 @@ namespace ArtLaShipNS.Api.DataAccess
 			this.Name = name;
 			this.SoundCloud = soundCloud;
 			this.Twitter = twitter;
+			this.Venmo = venmo;
 			this.Website = website;
 		}
 
@@ -67,11 +69,15 @@ namespace ArtLaShipNS.Api.DataAccess
 		public virtual string Twitter { get; private set; }
 
 		[MaxLength(128)]
+		[Column("venmo")]
+		public virtual string Venmo { get; private set; }
+
+		[MaxLength(128)]
 		[Column("website")]
 		public virtual string Website { get; private set; }
 	}
 }
 
 /*<Codenesium>
-    <Hash>684c142e1023457d1b134377696b91c3</Hash>
+    <Hash>aa3f42f7f80845430f0801ea196c1851</Hash>
 </Codenesium>*/

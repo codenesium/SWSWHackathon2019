@@ -24,6 +24,7 @@ export default class BankAccountMapper {
         dto.artistIdNavigation.name,
         dto.artistIdNavigation.soundCloud,
         dto.artistIdNavigation.twitter,
+        dto.artistIdNavigation.venmo,
         dto.artistIdNavigation.website
       );
     }
@@ -47,5 +48,5 @@ export default class BankAccountMapper {
 
 
 /*<Codenesium>
-    <Hash>79291dd8919ae79437eca250d4889164</Hash>
+    <Hash>b494600505daa3694c78dfd546912da9</Hash>
 </Codenesium>*/

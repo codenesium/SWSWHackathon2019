@@ -9,6 +9,7 @@ export default class ArtistViewModel {
   name: string;
   soundCloud: string;
   twitter: string;
+  venmo: string;
   website: string;
 
   constructor() {
@@ -20,6 +21,7 @@ export default class ArtistViewModel {
     this.name = '';
     this.soundCloud = '';
     this.twitter = '';
+    this.venmo = '';
     this.website = '';
   }
 
@@ -32,6 +34,7 @@ export default class ArtistViewModel {
     name: string,
     soundCloud: string,
     twitter: string,
+    venmo: string,
     website: string
   ): void {
     this.aspNetUserId = aspNetUserId;
@@ -42,6 +45,7 @@ export default class ArtistViewModel {
     this.name = name;
     this.soundCloud = soundCloud;
     this.twitter = twitter;
+    this.venmo = venmo;
     this.website = website;
   }
 
@@ -52,5 +56,5 @@ export default class ArtistViewModel {
 
 
 /*<Codenesium>
-    <Hash>3f2e749b795766343e3008de553cb2a4</Hash>
+    <Hash>746680099bbb91d1a62c93f552e1a2da</Hash>
 </Codenesium>*/

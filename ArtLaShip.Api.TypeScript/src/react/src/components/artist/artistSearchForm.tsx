@@ -200,6 +200,12 @@ export default class ArtistSearchComponent extends React.Component<ArtistSearchC
                       return <span>{String(props.original.twitter)}</span>;
                       }           
                     },  {
+                      Header: 'Venmo',
+                      accessor: 'venmo',
+                      Cell: (props) => {
+                      return <span>{String(props.original.venmo)}</span>;
+                      }           
+                    },  {
                       Header: 'Website',
                       accessor: 'website',
                       Cell: (props) => {
@@ -261,5 +267,5 @@ export default class ArtistSearchComponent extends React.Component<ArtistSearchC
 export const WrappedArtistSearchComponent = Form.create({ name: 'Artist Search' })(ArtistSearchComponent);
 
 /*<Codenesium>
-    <Hash>8f93308604ba2d053c77c8e26a62d169</Hash>
+    <Hash>4c8d9608a416505cbca110a7ac068519</Hash>
 </Codenesium>*/

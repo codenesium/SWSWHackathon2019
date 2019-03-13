@@ -16,7 +16,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 		{
 			var mapper = new ApiArtistServerModelMapper();
 			var model = new ApiArtistServerRequestModel();
-			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			ApiArtistServerResponseModel response = mapper.MapServerRequestToResponse(1, model);
 			response.Should().NotBeNull();
 			response.AspNetUserId.Should().Be("A");
@@ -26,6 +26,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -34,7 +35,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 		{
 			var mapper = new ApiArtistServerModelMapper();
 			var model = new ApiArtistServerResponseModel();
-			model.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			ApiArtistServerRequestModel response = mapper.MapServerResponseToRequest(model);
 			response.Should().NotBeNull();
 			response.AspNetUserId.Should().Be("A");
@@ -44,6 +45,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -52,7 +54,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 		{
 			var mapper = new ApiArtistServerModelMapper();
 			var model = new ApiArtistServerRequestModel();
-			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 
 			JsonPatchDocument<ApiArtistServerRequestModel> patch = mapper.CreatePatch(model);
 			var response = new ApiArtistServerRequestModel();
@@ -64,11 +66,12 @@ namespace ArtLaShipNS.Api.Services.Tests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>e810fc94ea67371ae07c71995cb0fb84</Hash>
+    <Hash>4cde0413b88cd2d1665971cbb105172d</Hash>
 </Codenesium>*/

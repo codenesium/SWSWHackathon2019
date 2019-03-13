@@ -35,9 +35,9 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			ApplicationDbContext context = testServer.Host.Services.GetService(typeof(ApplicationDbContext)) as ApplicationDbContext;
 
 			var model = new ApiArtistClientRequestModel();
-			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			var model2 = new ApiArtistClientRequestModel();
-			model2.SetProperties("C", "C", Guid.Parse("8d721ec8-4c9d-632f-6f06-7f89cc14862c"), "C", "C", "C", "C", "C");
+			model2.SetProperties("C", "C", Guid.Parse("8d721ec8-4c9d-632f-6f06-7f89cc14862c"), "C", "C", "C", "C", "C", "C");
 			var request = new List<ApiArtistClientRequestModel>() {model, model2};
 			CreateResponse<List<ApiArtistClientResponseModel>> result = await client.ArtistBulkInsertAsync(request);
 
@@ -51,6 +51,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			context.Set<Artist>().ToList()[1].Name.Should().Be("B");
 			context.Set<Artist>().ToList()[1].SoundCloud.Should().Be("B");
 			context.Set<Artist>().ToList()[1].Twitter.Should().Be("B");
+			context.Set<Artist>().ToList()[1].Venmo.Should().Be("B");
 			context.Set<Artist>().ToList()[1].Website.Should().Be("B");
 
 			context.Set<Artist>().ToList()[2].AspNetUserId.Should().Be("C");
@@ -60,6 +61,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			context.Set<Artist>().ToList()[2].Name.Should().Be("C");
 			context.Set<Artist>().ToList()[2].SoundCloud.Should().Be("C");
 			context.Set<Artist>().ToList()[2].Twitter.Should().Be("C");
+			context.Set<Artist>().ToList()[2].Venmo.Should().Be("C");
 			context.Set<Artist>().ToList()[2].Website.Should().Be("C");
 		}
 
@@ -74,7 +76,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			ApplicationDbContext context = testServer.Host.Services.GetService(typeof(ApplicationDbContext)) as ApplicationDbContext;
 
 			var model = new ApiArtistClientRequestModel();
-			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			CreateResponse<ApiArtistClientResponseModel> result = await client.ArtistCreateAsync(model);
 
 			result.Success.Should().BeTrue();
@@ -86,6 +88,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			context.Set<Artist>().ToList()[1].Name.Should().Be("B");
 			context.Set<Artist>().ToList()[1].SoundCloud.Should().Be("B");
 			context.Set<Artist>().ToList()[1].Twitter.Should().Be("B");
+			context.Set<Artist>().ToList()[1].Venmo.Should().Be("B");
 			context.Set<Artist>().ToList()[1].Website.Should().Be("B");
 
 			result.Record.AspNetUserId.Should().Be("B");
@@ -95,6 +98,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			result.Record.Name.Should().Be("B");
 			result.Record.SoundCloud.Should().Be("B");
 			result.Record.Twitter.Should().Be("B");
+			result.Record.Venmo.Should().Be("B");
 			result.Record.Website.Should().Be("B");
 		}
 
@@ -113,7 +117,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			ApiArtistServerResponseModel model = await service.Get(1);
 
 			ApiArtistClientRequestModel request = mapper.MapServerResponseToClientRequest(model);
-			request.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			request.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 
 			UpdateResponse<ApiArtistClientResponseModel> updateResponse = await client.ArtistUpdateAsync(model.Id, request);
 
@@ -128,6 +132,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			context.Set<Artist>().ToList()[0].Name.Should().Be("B");
 			context.Set<Artist>().ToList()[0].SoundCloud.Should().Be("B");
 			context.Set<Artist>().ToList()[0].Twitter.Should().Be("B");
+			context.Set<Artist>().ToList()[0].Venmo.Should().Be("B");
 			context.Set<Artist>().ToList()[0].Website.Should().Be("B");
 
 			updateResponse.Record.Id.Should().Be(1);
@@ -138,6 +143,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			updateResponse.Record.Name.Should().Be("B");
 			updateResponse.Record.SoundCloud.Should().Be("B");
 			updateResponse.Record.Twitter.Should().Be("B");
+			updateResponse.Record.Venmo.Should().Be("B");
 			updateResponse.Record.Website.Should().Be("B");
 		}
 
@@ -153,7 +159,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 
 			IArtistService service = testServer.Host.Services.GetService(typeof(IArtistService)) as IArtistService;
 			var model = new ApiArtistServerRequestModel();
-			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B");
+			model.SetProperties("B", "B", Guid.Parse("3842cac4-b9a0-8223-0dcc-509a6f75849b"), "B", "B", "B", "B", "B", "B");
 			CreateResponse<ApiArtistServerResponseModel> createdResponse = await service.Create(model);
 
 			createdResponse.Success.Should().BeTrue();
@@ -188,6 +194,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -226,6 +233,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			response[0].Name.Should().Be("A");
 			response[0].SoundCloud.Should().Be("A");
 			response[0].Twitter.Should().Be("A");
+			response[0].Venmo.Should().Be("A");
 			response[0].Website.Should().Be("A");
 		}
 
@@ -336,5 +344,5 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 }
 
 /*<Codenesium>
-    <Hash>7c4824c15001cd199c5dc40e7d1a3d19</Hash>
+    <Hash>1fed6f426b4cb433a226eecbb314beba</Hash>
 </Codenesium>*/

@@ -22,6 +22,7 @@ export default class EmailMapper {
         dto.artistIdNavigation.name,
         dto.artistIdNavigation.soundCloud,
         dto.artistIdNavigation.twitter,
+        dto.artistIdNavigation.venmo,
         dto.artistIdNavigation.website
       );
     }
@@ -43,5 +44,5 @@ export default class EmailMapper {
 
 
 /*<Codenesium>
-    <Hash>726845bf7b4ce6c0fa71cc725c081de7</Hash>
+    <Hash>6533c656d249770ade3981a4506ec079</Hash>
 </Codenesium>*/

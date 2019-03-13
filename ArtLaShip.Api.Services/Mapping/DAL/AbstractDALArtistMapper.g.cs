@@ -22,6 +22,7 @@ namespace ArtLaShipNS.Api.Services
 				model.Name,
 				model.SoundCloud,
 				model.Twitter,
+				model.Venmo,
 				model.Website);
 			return item;
 		}
@@ -39,6 +40,7 @@ namespace ArtLaShipNS.Api.Services
 			                    item.Name,
 			                    item.SoundCloud,
 			                    item.Twitter,
+			                    item.Venmo,
 			                    item.Website);
 
 			return model;
@@ -60,5 +62,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>a9748a566ada7dbbf6f73167efad5483</Hash>
+    <Hash>33e99099dbc0f2fb37d3ed34d66dd359</Hash>
 </Codenesium>*/

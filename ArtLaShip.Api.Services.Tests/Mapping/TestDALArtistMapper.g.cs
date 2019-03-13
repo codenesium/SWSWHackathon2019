@@ -17,7 +17,7 @@ namespace ArtLaShipNS.Api.Services
 		{
 			var mapper = new DALArtistMapper();
 			ApiArtistServerRequestModel model = new ApiArtistServerRequestModel();
-			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			model.SetProperties("A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			Artist response = mapper.MapModelToEntity(1, model);
 
 			response.AspNetUserId.Should().Be("A");
@@ -27,6 +27,7 @@ namespace ArtLaShipNS.Api.Services
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -35,7 +36,7 @@ namespace ArtLaShipNS.Api.Services
 		{
 			var mapper = new DALArtistMapper();
 			Artist item = new Artist();
-			item.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			item.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			ApiArtistServerResponseModel response = mapper.MapEntityToModel(item);
 
 			response.AspNetUserId.Should().Be("A");
@@ -46,6 +47,7 @@ namespace ArtLaShipNS.Api.Services
 			response.Name.Should().Be("A");
 			response.SoundCloud.Should().Be("A");
 			response.Twitter.Should().Be("A");
+			response.Venmo.Should().Be("A");
 			response.Website.Should().Be("A");
 		}
 
@@ -54,7 +56,7 @@ namespace ArtLaShipNS.Api.Services
 		{
 			var mapper = new DALArtistMapper();
 			Artist item = new Artist();
-			item.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A");
+			item.SetProperties(1, "A", "A", Guid.Parse("8420cdcf-d595-ef65-66e7-dff9f98764da"), "A", "A", "A", "A", "A", "A");
 			List<ApiArtistServerResponseModel> response = mapper.MapEntityToModel(new List<Artist>() { { item} });
 
 			response.Count.Should().Be(1);
@@ -63,5 +65,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>b8dc3382b7d24821d8f15463a09af621</Hash>
+    <Hash>19b882d8468861554b5b6b65520750a9</Hash>
 </Codenesium>*/
