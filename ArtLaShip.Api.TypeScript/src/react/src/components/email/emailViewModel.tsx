@@ -6,7 +6,7 @@ export default class EmailViewModel {
   artistIdEntity: string;
   artistIdNavigation?: ArtistViewModel;
   dateCreated: any;
-  email1: string;
+  emailValue: string;
   id: number;
 
   constructor() {
@@ -14,19 +14,19 @@ export default class EmailViewModel {
     this.artistIdEntity = '';
     this.artistIdNavigation = new ArtistViewModel();
     this.dateCreated = undefined;
-    this.email1 = '';
+    this.emailValue = '';
     this.id = 0;
   }
 
   setProperties(
     artistId: number,
     dateCreated: any,
-    email1: string,
+    emailValue: string,
     id: number
   ): void {
     this.artistId = artistId;
     this.dateCreated = moment(dateCreated, 'YYYY-MM-DD');
-    this.email1 = email1;
+    this.emailValue = emailValue;
     this.id = id;
   }
 
@@ -37,5 +37,5 @@ export default class EmailViewModel {
 
 
 /*<Codenesium>
-    <Hash>235b69cb731bfa8ee9789e2a533d9988</Hash>
+    <Hash>648a056347bbeac9b7d907eb795d4e20</Hash>
 </Codenesium>*/

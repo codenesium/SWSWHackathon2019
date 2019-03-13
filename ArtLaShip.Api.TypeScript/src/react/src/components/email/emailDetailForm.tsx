@@ -7,6 +7,9 @@ import EmailViewModel from './emailViewModel';
 import { Form, Input, Button, Spin, Alert } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
 
+
+
+
 interface EmailDetailComponentProps {
   form: WrappedFormUtils;
   history: any;
@@ -22,23 +25,21 @@ interface EmailDetailComponentState {
 }
 
 class EmailDetailComponent extends React.Component<
-  EmailDetailComponentProps,
-  EmailDetailComponentState
+EmailDetailComponentProps,
+EmailDetailComponentState
 > {
   state = {
     model: new EmailViewModel(),
     loading: false,
     loaded: true,
     errorOccurred: false,
-    errorMessage: '',
+    errorMessage: ''
   };
 
-  handleEditClick(e: any) {
-    this.props.history.push(
-      ClientRoutes.Emails + '/edit/' + this.state.model!.id
-    );
+  handleEditClick(e:any) {
+    this.props.history.push(ClientRoutes.Emails + '/edit/' + this.state.model!.id);
   }
-
+  
   componentDidMount() {
     this.setState({ ...this.state, loading: true });
 
@@ -84,40 +85,43 @@ class EmailDetailComponent extends React.Component<
   }
 
   render() {
+    
     let message: JSX.Element = <div />;
     if (this.state.errorOccurred) {
       message = <Alert message={this.state.errorMessage} type="error" />;
-    }
-
+    } 
+  
     if (this.state.loading) {
       return <Spin size="large" />;
     } else if (this.state.loaded) {
       return (
         <div>
-          <Button
-            style={{ float: 'right' }}
-            type="primary"
-            onClick={(e: any) => {
-              this.handleEditClick(e);
-            }}
-          >
-            <i className="fas fa-edit" />
-          </Button>
-          <div>
-            <div style={{ marginBottom: '10px' }}>
-              <h3>Artist</h3>
-              <p>{String(this.state.model!.artistIdNavigation!.toDisplay())}</p>
-            </div>
-            <div>
-              <h3>Date Created</h3>
-              <p>{String(this.state.model!.dateCreated)}</p>
-            </div>
-            <div>
-              <h3>Email</h3>
-              <p>{String(this.state.model!.email1)}</p>
-            </div>
-          </div>
+		<Button 
+			style={{'float':'right'}}
+			type="primary" 
+			onClick={(e:any) => {
+				this.handleEditClick(e)
+				}}
+			>
+             <i className="fas fa-edit" />
+		  </Button>
+		  <div>
+									 <div style={{"marginBottom":"10px"}}>
+							<h3>Artist</h3>
+							<p>{String(this.state.model!.artistIdNavigation!.toDisplay())}</p>
+						 </div>
+					   						 <div>
+							<h3>Date Created</h3>
+							<p>{String(this.state.model!.dateCreated)}</p>
+						 </div>
+					   						 <div>
+							<h3>Email</h3>
+							<p>{String(this.state.model!.emailValue)}</p>
+						 </div>
+					   		  </div>
           {message}
+
+
         </div>
       );
     } else {
@@ -126,11 +130,10 @@ class EmailDetailComponent extends React.Component<
   }
 }
 
-export const WrappedEmailDetailComponent = Form.create({
-  name: 'Email Detail',
-})(EmailDetailComponent);
-
+export const WrappedEmailDetailComponent = Form.create({ name: 'Email Detail' })(
+  EmailDetailComponent
+);
 
 /*<Codenesium>
-    <Hash>0497173b40d31b3be710946e958aab0a</Hash>
+    <Hash>2a135de89419c7258720fdc95176fdbb</Hash>
 </Codenesium>*/

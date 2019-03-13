@@ -47,7 +47,7 @@ export const wrapperPublicMenu = (
               >
 			  <Icon type="rise" />
               <span>Admin</span>
-              <Link to={'/admin'}></Link>
+              <Link to={'/dashboard'}></Link>
               </MenuItem>
             </Menu>
 

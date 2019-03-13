@@ -16,24 +16,24 @@ namespace ArtLaShipNS.Api.DataAccess
 		public virtual void SetProperties(
 			int id,
 			int artistId,
-			DateTime dateCreated,
-			string email1)
+			DateTime? dateCreated,
+			string emailValue)
 		{
 			this.Id = id;
 			this.ArtistId = artistId;
 			this.DateCreated = dateCreated;
-			this.Email1 = email1;
+			this.EmailValue = emailValue;
 		}
 
 		[Column("artistId")]
 		public virtual int ArtistId { get; private set; }
 
 		[Column("dateCreated")]
-		public virtual DateTime DateCreated { get; private set; }
+		public virtual DateTime? DateCreated { get; private set; }
 
 		[MaxLength(128)]
 		[Column("email")]
-		public virtual string Email1 { get; private set; }
+		public virtual string EmailValue { get; private set; }
 
 		[Key]
 		[Column("id")]
@@ -50,5 +50,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>638167deadf1421143b90a012ce1d425</Hash>
+    <Hash>7c9eee31a4a59425f96c9e6bb91e9890</Hash>
 </Codenesium>*/

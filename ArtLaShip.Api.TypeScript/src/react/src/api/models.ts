@@ -202,7 +202,7 @@ this.stripeTransactionId = stripeTransactionId;
 artistIdEntity : string;
 artistIdNavigation? : ArtistClientResponseModel;
 dateCreated:any;
-email1:string;
+emailValue:string;
 id:number;
 
 	
@@ -211,16 +211,16 @@ id:number;
 this.artistIdEntity = '';
 this.artistIdNavigation = undefined;
 this.dateCreated = undefined;
-this.email1 = '';
+this.emailValue = '';
 this.id = 0;
 
 				}
 
-				setProperties(artistId : number,dateCreated : any,email1 : string,id : number) : void
+				setProperties(artistId : number,dateCreated : any,emailValue : string,id : number) : void
 				{
 					this.artistId = artistId;
 this.dateCreated = dateCreated;
-this.email1 = email1;
+this.emailValue = emailValue;
 this.id = id;
 
 				}
@@ -231,7 +231,7 @@ this.id = id;
 artistIdEntity : string;
 artistIdNavigation? : ArtistClientResponseModel;
 dateCreated:any;
-email1:string;
+emailValue:string;
 id:number;
 
 	
@@ -240,21 +240,21 @@ id:number;
 this.artistIdEntity = '';
 this.artistIdNavigation = undefined;
 this.dateCreated = undefined;
-this.email1 = '';
+this.emailValue = '';
 this.id = 0;
 
 				}
 
-				setProperties(artistId : number,dateCreated : any,email1 : string,id : number) : void
+				setProperties(artistId : number,dateCreated : any,emailValue : string,id : number) : void
 				{
 					this.artistId = artistId;
 this.dateCreated = dateCreated;
-this.email1 = email1;
+this.emailValue = emailValue;
 this.id = id;
 
 				}
 			}
 
 /*<Codenesium>
-    <Hash>045aae0cb8fd6156c3347be22857325f</Hash>
+    <Hash>fdb6ab2a9043bfab451e6a864185122b</Hash>
 </Codenesium>*/

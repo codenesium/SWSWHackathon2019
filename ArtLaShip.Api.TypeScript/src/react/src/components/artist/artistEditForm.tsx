@@ -163,16 +163,19 @@ class ArtistEditComponent extends React.Component<
 
         return ( 
          <Form onSubmit={this.handleSubmit}>
-            			<Form.Item>
-              <label htmlFor='aspNetUserId'>Asp Net User</label>
+
+						<Form.Item>
+              <label htmlFor='name'>Name</label>
               <br />             
-              {getFieldDecorator('aspNetUserId', {
-              rules:[{ max: 450, message: 'Exceeds max length of 450' },
+              {getFieldDecorator('name', {
+              rules:[{ required: true, message: 'Required' },
+{ max: 128, message: 'Exceeds max length of 128' },
 ],
               
               })
-              ( <Input placeholder={"Asp Net User"} /> )}
+              ( <Input placeholder={"Name"} /> )}
               </Form.Item>
+
 
 						<Form.Item>
               <label htmlFor='bio'>Bio</label>
@@ -193,20 +196,9 @@ class ArtistEditComponent extends React.Component<
 ],
               
               })
-              ( <Input placeholder={"Facebook"} /> )}
+              ( <Input placeholder={"Facebook"} addonBefore="https://facebook.com/" /> )}
               </Form.Item>
 
-						<Form.Item>
-              <label htmlFor='name'>Name</label>
-              <br />             
-              {getFieldDecorator('name', {
-              rules:[{ required: true, message: 'Required' },
-{ max: 128, message: 'Exceeds max length of 128' },
-],
-              
-              })
-              ( <Input placeholder={"Name"} /> )}
-              </Form.Item>
 
 						<Form.Item>
               <label htmlFor='soundCloud'>Sound Cloud</label>
@@ -216,7 +208,7 @@ class ArtistEditComponent extends React.Component<
 ],
               
               })
-              ( <Input placeholder={"Sound Cloud"} /> )}
+              ( <Input placeholder={"Sound Cloud"}   addonBefore="https://soundcloud.com/"/> )}
               </Form.Item>
 
 						<Form.Item>
@@ -227,7 +219,7 @@ class ArtistEditComponent extends React.Component<
 ],
               
               })
-              ( <Input placeholder={"Twitter"} /> )}
+              ( <Input placeholder={"Twitter"} addonBefore="https://twitter.com/" /> )}
               </Form.Item>
 
 						<Form.Item>
@@ -238,7 +230,7 @@ class ArtistEditComponent extends React.Component<
 ],
               
               })
-              ( <Input placeholder={"Website"} /> )}
+              ( <Input placeholder={"Website"}  /> )}
               </Form.Item>
 
 			

@@ -48,25 +48,13 @@ export const wrapperHeader = (
 
               <MenuItem key="artist">
                 <Icon type="pie-chart" />
-                <span>Artist</span>
-                <Link to={ClientRoutes.Artists} />
-              </MenuItem>
-
-              <MenuItem key="bankAccount">
-                <Icon type="rise" />
-                <span>Bank Account</span>
-                <Link to={ClientRoutes.BankAccounts} />
-              </MenuItem>
-
-              <MenuItem key="transaction">
-                <Icon type="bars" />
-                <span>Transaction</span>
-                <Link to={ClientRoutes.Transactions} />
+                <span>Profile</span>
+                <Link to={ClientRoutes.Artists + '/edit/2'} />
               </MenuItem>
 
               <MenuItem key="email">
                 <Icon type="cloud" />
-                <span>Email</span>
+                <span>Emails</span>
                 <Link to={ClientRoutes.Emails} />
               </MenuItem>
             </Menu>
@@ -78,7 +66,7 @@ export const wrapperHeader = (
                 <Component {...this.props} />
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+            <Footer style={{ textAlign: 'center' }}></Footer>
           </Layout>
         </Layout>
       );

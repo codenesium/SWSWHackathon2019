@@ -14,7 +14,7 @@ namespace ArtLaShipNS.Api.Client
 			response.SetProperties(id,
 			                       request.ArtistId,
 			                       request.DateCreated,
-			                       request.Email1);
+			                       request.EmailValue);
 			return response;
 		}
 
@@ -25,12 +25,12 @@ namespace ArtLaShipNS.Api.Client
 			request.SetProperties(
 				response.ArtistId,
 				response.DateCreated,
-				response.Email1);
+				response.EmailValue);
 			return request;
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>b3540e1270187d5719cdf361db4a6075</Hash>
+    <Hash>b8dd228cd7f90e2f77915cd6f63eb279</Hash>
 </Codenesium>*/

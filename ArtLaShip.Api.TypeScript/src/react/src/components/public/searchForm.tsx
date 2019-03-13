@@ -104,24 +104,21 @@ export default class SearchComponent extends React.Component<SearchComponentProp
        <h2 style={{'textAlign':'center'}}>ArtLaShip</h2>
        <br />
             <Row>
-				<Col span={8}></Col>
-				<Col span={8}>   
-        <Select
-        showSearch
-        placeholder="Search for an artist..."
-        defaultActiveFirstOption={false}
-        showArrow={false}
-        filterOption={false}
-        onSearch={(value) => this.handleSearchChanged(value)}
-        onChange={(value) => this.handleChange(value)}
-        notFoundContent={null}
-        style={{'width':'100%'}}
-      >
-        {options}
-      </Select>
-				</Col>
-				<Col span={8}>  
-				</Col>
+              <Col span={12} offset={6}>   
+              <Select
+              showSearch
+              placeholder="Search for an artist..."
+              defaultActiveFirstOption={false}
+              showArrow={false}
+              filterOption={false}
+              onSearch={(value) => this.handleSearchChanged(value)}
+              onChange={(value) => this.handleChange(value)}
+              notFoundContent="No artists found..."
+              style={{'width':'100%'}}
+              >
+                {options}
+              </Select>
+              </Col>
 			</Row>
 			<br />
 			<br />

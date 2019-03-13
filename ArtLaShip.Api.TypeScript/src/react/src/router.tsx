@@ -54,8 +54,8 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
 
               <Route
             exact
-            path="/admin"
-            component={wrapperHeader(Dashboard, 'Admin')}
+            path="/dashboard"
+            component={wrapperHeader(Dashboard, 'Dashboard')}
           />
 
           <Route

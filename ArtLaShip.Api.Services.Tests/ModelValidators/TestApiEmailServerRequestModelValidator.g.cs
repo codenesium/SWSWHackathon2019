@@ -75,7 +75,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 		}
 
 		[Fact]
-		public async void Email1_Create_null()
+		public async void EmailValue_Create_null()
 		{
 			Mock<IEmailRepository> emailRepository = new Mock<IEmailRepository>();
 			emailRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Email()));
@@ -83,11 +83,11 @@ namespace ArtLaShipNS.Api.Services.Tests
 			var validator = new ApiEmailServerRequestModelValidator(emailRepository.Object);
 			await validator.ValidateCreateAsync(new ApiEmailServerRequestModel());
 
-			validator.ShouldHaveValidationErrorFor(x => x.Email1, null as string);
+			validator.ShouldHaveValidationErrorFor(x => x.EmailValue, null as string);
 		}
 
 		[Fact]
-		public async void Email1_Update_null()
+		public async void EmailValue_Update_null()
 		{
 			Mock<IEmailRepository> emailRepository = new Mock<IEmailRepository>();
 			emailRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Email()));
@@ -95,11 +95,11 @@ namespace ArtLaShipNS.Api.Services.Tests
 			var validator = new ApiEmailServerRequestModelValidator(emailRepository.Object);
 			await validator.ValidateUpdateAsync(default(int), new ApiEmailServerRequestModel());
 
-			validator.ShouldHaveValidationErrorFor(x => x.Email1, null as string);
+			validator.ShouldHaveValidationErrorFor(x => x.EmailValue, null as string);
 		}
 
 		[Fact]
-		public async void Email1_Create_length()
+		public async void EmailValue_Create_length()
 		{
 			Mock<IEmailRepository> emailRepository = new Mock<IEmailRepository>();
 			emailRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Email()));
@@ -107,11 +107,11 @@ namespace ArtLaShipNS.Api.Services.Tests
 			var validator = new ApiEmailServerRequestModelValidator(emailRepository.Object);
 			await validator.ValidateCreateAsync(new ApiEmailServerRequestModel());
 
-			validator.ShouldHaveValidationErrorFor(x => x.Email1, new string('A', 129));
+			validator.ShouldHaveValidationErrorFor(x => x.EmailValue, new string('A', 129));
 		}
 
 		[Fact]
-		public async void Email1_Update_length()
+		public async void EmailValue_Update_length()
 		{
 			Mock<IEmailRepository> emailRepository = new Mock<IEmailRepository>();
 			emailRepository.Setup(x => x.Get(It.IsAny<int>())).Returns(Task.FromResult(new Email()));
@@ -119,11 +119,11 @@ namespace ArtLaShipNS.Api.Services.Tests
 			var validator = new ApiEmailServerRequestModelValidator(emailRepository.Object);
 			await validator.ValidateUpdateAsync(default(int), new ApiEmailServerRequestModel());
 
-			validator.ShouldHaveValidationErrorFor(x => x.Email1, new string('A', 129));
+			validator.ShouldHaveValidationErrorFor(x => x.EmailValue, new string('A', 129));
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>f213f65b1710e023490aad948954a44a</Hash>
+    <Hash>0e56ccc988db2d149ab94350c11123f8</Hash>
 </Codenesium>*/

@@ -42,22 +42,9 @@ export default class Dashboard extends React.Component<DashboardComponentProps, 
   }
 
   render() {
-      let alert:JSX.Element = <div></div>;
-      if(this.state.connecting){
-        alert = <Alert message='Connecting...' type='info' />;
-      }
-      else if(this.state.connected){
-        alert = <Alert message='Connected...' type='success' />;
-      }
-      else {
-        alert = <Alert message='Unable to connect to API...' type='warning' />;
-      }
-
+ 
       return <div>
-        {alert}
-        <br />
-        <div>API Health Endpoint : <a target='_blank' href={Constants.ApiHealthEndpoint}>{Constants.ApiHealthEndpoint}</a></div>
-        <div>Swagger Endpoint : <a target='_blank' href={Constants.SwaggerEndpoint}>{Constants.SwaggerEndpoint}</a></div>
+        Welcome to your dashboard!
       </div>;
   }
 }

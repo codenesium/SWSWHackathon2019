@@ -4,11 +4,11 @@ import { Constants, ApiRoutes, ClientRoutes } from '../../constants';
 import * as Api from '../../api/models';
 import ArtistMapper from '../artist/artistMapper';
 import ArtistViewModel from '../artist/artistViewModel';
-import { Form, Input, Button, Spin, Alert } from 'antd';
+import { Col,Row, Form, Input, Button, Spin, Alert, Icon } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
-import {BankAccountTableComponent} from '../shared/bankAccountTable'
-import {EmailTableComponent} from '../shared/emailTable'
-import {TransactionTableComponent} from '../shared/transactionTable'
+import { ActionResponse, CreateResponse } from '../../api/apiObjects';
+import EmailMapper from '../email/emailMapper';
+import EmailViewModel from '../email/emailViewModel';
 	
 
 
@@ -25,6 +25,8 @@ interface ArtistComponentState {
   loaded: boolean;
   errorOccurred: boolean;
   errorMessage: string;
+  submitting:boolean;
+  submitted:boolean;
 }
 
 class ArtistComponent extends React.Component<
@@ -36,13 +38,76 @@ ArtistComponentState
     loading: false,
     loaded: true,
     errorOccurred: false,
-    errorMessage: ''
+    errorMessage: '',
+    submitting:false,
+    submitted:false
   };
 
   handleEditClick(e:any) {
     this.props.history.push(ClientRoutes.Artists + '/edit/' + this.state.model!.id);
   }
   
+  handleSubmit = (value:string) => {
+
+    this.setState({ ...this.state, submitting: true, submitted: false });
+    this.props.form.validateFields((err: any, values: any) => {
+      if (!err) {
+        let model = values as EmailViewModel;
+        model.artistId = this.state.model!.id;
+        model.emailValue = value;
+        model.dateCreated
+        console.log('Received values of form: ', model);
+        this.submit(model);
+      } else {
+        this.setState({ ...this.state, submitting: false, submitted: false });
+      }
+    });
+  };
+
+  submit = (model: EmailViewModel) => {
+    let mapper = new EmailMapper();
+    axios
+      .post(
+        Constants.ApiEndpoint + ApiRoutes.Emails,
+        mapper.mapViewModelToApiRequest(model),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then(
+        resp => {
+          let response = resp.data as CreateResponse<
+            Api.EmailClientRequestModel
+          >;
+          this.setState({
+            ...this.state,
+            submitted: true,
+            submitting: false,
+            errorOccurred: false,
+            errorMessage: ''
+          });
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+          if (error.response.data) {
+            let errorResponse = error.response.data as ActionResponse;
+
+          }
+          this.setState({
+            ...this.state,
+            submitted: true,
+            submitting: false,
+            errorOccurred: true,
+            errorMessage: 'Error from API',
+          });
+        }
+      );
+  };
+
+
   componentDidMount() {
     this.setState({ ...this.state, loading: true });
 
@@ -89,6 +154,14 @@ ArtistComponentState
 
   render() {
     
+    const {
+      getFieldDecorator,
+      getFieldsError,
+      getFieldError,
+      isFieldTouched,
+    } = this.props.form;
+
+
     if (this.state.loading) {
       return <Spin size="large" />;
     } else if (this.state.loaded) {
@@ -96,28 +169,52 @@ ArtistComponentState
     <div>
 		  <div>
 
-        		<div>
+        		<div style={{'textAlign':'center', 'marginBottom':'30px'}}>
 							<h1>{String(this.state.model!.name)}</h1>
 						 </div>
 
-						 <div>
-							<p>{String(this.state.model!.bio)}</p>
+     <Row style={{'marginBottom':'30px'}}>
+     <Col span={12} offset={6}>  
+						 <div style={{'textAlign':'left'}}>
+							<p>{String(this.state.model!.bio || '')}</p>
 						 </div>
-		         
+             </Col>
+    </Row>
+ 
+     <Row style={{'marginBottom':'30px'}}>
+     <Col span={12} offset={6}>   
+    <Input.Search
+      placeholder="Subscribe to the mailing list..."
+      enterButton={this.state.submitted ? "Submitted" : "Submit"}
+      size="large"
+      type="email"
+      disabled={this.state.submitted}
+      onSearch={(value:string) => {this.handleSubmit(value)}}
+    />
+    </Col>
+    </Row>
+
+            
+            <Row>
+     <Col span={12} offset={6}>  
+    
              <div>
-             <a href={String(this.state.model!.facebook)}>{String(this.state.model!.facebook)}</a>
+             <a href={"https://facebook.com/" + String(this.state.model!.facebook)} target="_blank"><Icon type="facebook"/>&nbsp;Facebook</a>
 						 </div>
 
 					   <div>
-             <a href={String(this.state.model!.soundCloud)}>{String(this.state.model!.soundCloud)}</a>
+             <a href={"https://soundCloud.com/" +String(this.state.model!.soundCloud)} target="_blank"><Icon type="sound"/>&nbsp;Sound Cloud</a>
 						 </div>
 
 					   <div>
-             <a href={String(this.state.model!.twitter)}>{String(this.state.model!.twitter)}</a>
+             <a href={"https://twitter.com/" +String(this.state.model!.twitter)} target="_blank"><Icon type="twitter"/>&nbsp;Twitter</a>
 						 </div>
 					   <div>
-             <a href={String(this.state.model!.website)}>{String(this.state.model!.website)}</a>
+             <a href={String(this.state.model!.website)} target="_blank"><Icon type="link"/>&nbsp;Website</a>
 						 </div>
+
+                          </Col>
+              </Row>
 					  </div>
          </div>
       );

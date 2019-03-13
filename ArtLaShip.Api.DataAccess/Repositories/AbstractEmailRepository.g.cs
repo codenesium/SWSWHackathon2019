@@ -36,8 +36,8 @@ namespace ArtLaShipNS.Api.DataAccess
 			{
 				return this.Where(x =>
 				                  x.ArtistId == query.ToInt() ||
-				                  x.DateCreated == query.ToDateTime() ||
-				                  x.Email1.StartsWith(query) ||
+				                  x.DateCreated == query.ToNullableDateTime() ||
+				                  x.EmailValue.StartsWith(query) ||
 				                  x.Id == query.ToInt(),
 				                  limit,
 				                  offset);
@@ -129,5 +129,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>d5b45b495af7ebfb1a9fdbe0256bf19b</Hash>
+    <Hash>5df41574fb2655744af5b646cf861929</Hash>
 </Codenesium>*/

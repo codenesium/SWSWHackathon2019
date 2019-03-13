@@ -4,7 +4,12 @@ import ArtistViewModel from '../artist/artistViewModel';
 export default class EmailMapper {
   mapApiResponseToViewModel(dto: Api.EmailClientResponseModel): EmailViewModel {
     let response = new EmailViewModel();
-    response.setProperties(dto.artistId, dto.dateCreated, dto.email1, dto.id);
+    response.setProperties(
+      dto.artistId,
+      dto.dateCreated,
+      dto.emailValue,
+      dto.id
+    );
 
     if (dto.artistIdNavigation != null) {
       response.artistIdNavigation = new ArtistViewModel();
@@ -29,7 +34,7 @@ export default class EmailMapper {
     response.setProperties(
       model.artistId,
       model.dateCreated,
-      model.email1,
+      model.emailValue,
       model.id
     );
     return response;
@@ -38,5 +43,5 @@ export default class EmailMapper {
 
 
 /*<Codenesium>
-    <Hash>29405d2c8edbf99512204ea48618deec</Hash>
+    <Hash>726845bf7b4ce6c0fa71cc725c081de7</Hash>
 </Codenesium>*/

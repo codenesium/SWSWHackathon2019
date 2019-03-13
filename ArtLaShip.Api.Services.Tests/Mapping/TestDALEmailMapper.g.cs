@@ -22,7 +22,7 @@ namespace ArtLaShipNS.Api.Services
 
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 		}
 
 		[Fact]
@@ -35,7 +35,7 @@ namespace ArtLaShipNS.Api.Services
 
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 			response.Id.Should().Be(1);
 		}
 
@@ -53,5 +53,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>f3335edd7ab7ef65117aa29e533d45e7</Hash>
+    <Hash>5011fd33cefc529ebb0385307912b5f0</Hash>
 </Codenesium>*/

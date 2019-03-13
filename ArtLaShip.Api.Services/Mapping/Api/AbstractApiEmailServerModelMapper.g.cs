@@ -16,7 +16,7 @@ namespace ArtLaShipNS.Api.Services
 			response.SetProperties(id,
 			                       request.ArtistId,
 			                       request.DateCreated,
-			                       request.Email1);
+			                       request.EmailValue);
 			return response;
 		}
 
@@ -27,7 +27,7 @@ namespace ArtLaShipNS.Api.Services
 			request.SetProperties(
 				response.ArtistId,
 				response.DateCreated,
-				response.Email1);
+				response.EmailValue);
 			return request;
 		}
 
@@ -38,7 +38,7 @@ namespace ArtLaShipNS.Api.Services
 			request.SetProperties(
 				response.ArtistId,
 				response.DateCreated,
-				response.Email1);
+				response.EmailValue);
 			return request;
 		}
 
@@ -47,12 +47,12 @@ namespace ArtLaShipNS.Api.Services
 			var patch = new JsonPatchDocument<ApiEmailServerRequestModel>();
 			patch.Replace(x => x.ArtistId, model.ArtistId);
 			patch.Replace(x => x.DateCreated, model.DateCreated);
-			patch.Replace(x => x.Email1, model.Email1);
+			patch.Replace(x => x.EmailValue, model.EmailValue);
 			return patch;
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>e1fb316acbdaa7b9ecb439daa3c825a2</Hash>
+    <Hash>a6e17c8eebfaad7b62cde0d0d1266319</Hash>
 </Codenesium>*/

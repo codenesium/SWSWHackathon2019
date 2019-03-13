@@ -17,7 +17,7 @@ namespace ArtLaShipNS.Api.Services
 				id,
 				model.ArtistId,
 				model.DateCreated,
-				model.Email1);
+				model.EmailValue);
 			return item;
 		}
 
@@ -29,7 +29,7 @@ namespace ArtLaShipNS.Api.Services
 			model.SetProperties(item.Id,
 			                    item.ArtistId,
 			                    item.DateCreated,
-			                    item.Email1);
+			                    item.EmailValue);
 			if (item.ArtistIdNavigation != null)
 			{
 				var artistIdModel = new ApiArtistServerResponseModel();
@@ -66,5 +66,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>ed778c822275153c53382aa670cca3b1</Hash>
+    <Hash>2faebfc398c8a76c8e655e5c267a1cc9</Hash>
 </Codenesium>*/

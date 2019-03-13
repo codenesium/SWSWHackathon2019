@@ -7,9 +7,6 @@ import TransactionViewModel from './transactionViewModel';
 import { Form, Input, Button, Spin, Alert } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
 
-
-
-
 interface TransactionDetailComponentProps {
   form: WrappedFormUtils;
   history: any;
@@ -25,21 +22,23 @@ interface TransactionDetailComponentState {
 }
 
 class TransactionDetailComponent extends React.Component<
-TransactionDetailComponentProps,
-TransactionDetailComponentState
+  TransactionDetailComponentProps,
+  TransactionDetailComponentState
 > {
   state = {
     model: new TransactionViewModel(),
     loading: false,
     loaded: true,
     errorOccurred: false,
-    errorMessage: ''
+    errorMessage: '',
   };
 
-  handleEditClick(e:any) {
-    this.props.history.push(ClientRoutes.Transactions + '/edit/' + this.state.model!.id);
+  handleEditClick(e: any) {
+    this.props.history.push(
+      ClientRoutes.Transactions + '/edit/' + this.state.model!.id
+    );
   }
-  
+
   componentDidMount() {
     this.setState({ ...this.state, loading: true });
 
@@ -85,47 +84,44 @@ TransactionDetailComponentState
   }
 
   render() {
-    
     let message: JSX.Element = <div />;
     if (this.state.errorOccurred) {
       message = <Alert message={this.state.errorMessage} type="error" />;
-    } 
-  
+    }
+
     if (this.state.loading) {
       return <Spin size="large" />;
     } else if (this.state.loaded) {
       return (
         <div>
-		<Button 
-			style={{'float':'right'}}
-			type="primary" 
-			onClick={(e:any) => {
-				this.handleEditClick(e)
-				}}
-			>
-             <i className="fas fa-edit" />
-		  </Button>
-		  <div>
-									 <div>
-							<h3>Amount</h3>
-							<p>{String(this.state.model!.amount)}</p>
-						 </div>
-					   						 <div style={{"marginBottom":"10px"}}>
-							<h3>Artist</h3>
-							<p>{String(this.state.model!.artistIdNavigation!.toDisplay())}</p>
-						 </div>
-					   						 <div>
-							<h3>Date Created</h3>
-							<p>{String(this.state.model!.dateCreated)}</p>
-						 </div>
-					   						 <div>
-							<h3>Stripe Transaction</h3>
-							<p>{String(this.state.model!.stripeTransactionId)}</p>
-						 </div>
-					   		  </div>
+          <Button
+            style={{ float: 'right' }}
+            type="primary"
+            onClick={(e: any) => {
+              this.handleEditClick(e);
+            }}
+          >
+            <i className="fas fa-edit" />
+          </Button>
+          <div>
+            <div>
+              <h3>Amount</h3>
+              <p>{String(this.state.model!.amount)}</p>
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              <h3>Artist</h3>
+              <p>{String(this.state.model!.artistIdNavigation!.toDisplay())}</p>
+            </div>
+            <div>
+              <h3>Date Created</h3>
+              <p>{String(this.state.model!.dateCreated)}</p>
+            </div>
+            <div>
+              <h3>Stripe Transaction</h3>
+              <p>{String(this.state.model!.stripeTransactionId)}</p>
+            </div>
+          </div>
           {message}
-
-
         </div>
       );
     } else {
@@ -134,10 +130,11 @@ TransactionDetailComponentState
   }
 }
 
-export const WrappedTransactionDetailComponent = Form.create({ name: 'Transaction Detail' })(
-  TransactionDetailComponent
-);
+export const WrappedTransactionDetailComponent = Form.create({
+  name: 'Transaction Detail',
+})(TransactionDetailComponent);
+
 
 /*<Codenesium>
-    <Hash>91ff8b36af1387bcd7bc47984200f4a2</Hash>
+    <Hash>650e5a7fbb6ab97ce80728adf99f22db</Hash>
 </Codenesium>*/

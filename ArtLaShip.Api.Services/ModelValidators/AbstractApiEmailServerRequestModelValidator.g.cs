@@ -35,10 +35,10 @@ namespace ArtLaShipNS.Api.Services
 		{
 		}
 
-		public virtual void Email1Rules()
+		public virtual void EmailValueRules()
 		{
-			this.RuleFor(x => x.Email1).NotNull().WithErrorCode(ValidationErrorCodes.ViolatesShouldNotBeNullRule);
-			this.RuleFor(x => x.Email1).Length(0, 128).WithErrorCode(ValidationErrorCodes.ViolatesLengthRule);
+			this.RuleFor(x => x.EmailValue).NotNull().WithErrorCode(ValidationErrorCodes.ViolatesShouldNotBeNullRule);
+			this.RuleFor(x => x.EmailValue).Length(0, 128).WithErrorCode(ValidationErrorCodes.ViolatesLengthRule);
 		}
 
 		protected async Task<bool> BeValidArtistByArtistId(int id,  CancellationToken cancellationToken)
@@ -51,5 +51,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>0e10e86aac27f04daeb93b22efa82e9d</Hash>
+    <Hash>280276c763d109596578a6094cbdb3f8</Hash>
 </Codenesium>*/

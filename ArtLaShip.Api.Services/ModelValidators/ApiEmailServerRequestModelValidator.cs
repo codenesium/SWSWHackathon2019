@@ -17,7 +17,7 @@ namespace ArtLaShipNS.Api.Services
 		{
 			this.ArtistIdRules();
 			this.DateCreatedRules();
-			this.Email1Rules();
+			this.EmailValueRules();
 			return await this.ValidateAsync(model);
 		}
 
@@ -25,7 +25,7 @@ namespace ArtLaShipNS.Api.Services
 		{
 			this.ArtistIdRules();
 			this.DateCreatedRules();
-			this.Email1Rules();
+			this.EmailValueRules();
 			return await this.ValidateAsync(model, id);
 		}
 
@@ -37,5 +37,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>5319be6a0480fe5b8fb22a61d5eebebb</Hash>
+    <Hash>4ff014df6a36d673ef358c338e80b8b3</Hash>
 </Codenesium>*/

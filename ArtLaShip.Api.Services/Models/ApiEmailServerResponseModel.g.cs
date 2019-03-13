@@ -11,13 +11,13 @@ namespace ArtLaShipNS.Api.Services
 		public virtual void SetProperties(
 			int id,
 			int artistId,
-			DateTime dateCreated,
-			string email1)
+			DateTime? dateCreated,
+			string emailValue)
 		{
 			this.Id = id;
 			this.ArtistId = artistId;
 			this.DateCreated = dateCreated;
-			this.Email1 = email1;
+			this.EmailValue = emailValue;
 		}
 
 		[JsonProperty]
@@ -34,11 +34,12 @@ namespace ArtLaShipNS.Api.Services
 			this.ArtistIdNavigation = value;
 		}
 
+		[Required]
 		[JsonProperty]
-		public DateTime DateCreated { get; private set; }
+		public DateTime? DateCreated { get; private set; }
 
 		[JsonProperty]
-		public string Email1 { get; private set; }
+		public string EmailValue { get; private set; }
 
 		[JsonProperty]
 		public int Id { get; private set; }
@@ -46,5 +47,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>9ce2f8e4ba6d207079fb281143dd9844</Hash>
+    <Hash>733ee84509174c82d670f8051a40b892</Hash>
 </Codenesium>*/

@@ -46,11 +46,11 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 
 			context.Set<Email>().ToList()[1].ArtistId.Should().Be(1);
 			context.Set<Email>().ToList()[1].DateCreated.Should().Be(DateTime.Parse("1/1/1988 12:00:00 AM"));
-			context.Set<Email>().ToList()[1].Email1.Should().Be("B");
+			context.Set<Email>().ToList()[1].EmailValue.Should().Be("B");
 
 			context.Set<Email>().ToList()[2].ArtistId.Should().Be(1);
 			context.Set<Email>().ToList()[2].DateCreated.Should().Be(DateTime.Parse("1/1/1989 12:00:00 AM"));
-			context.Set<Email>().ToList()[2].Email1.Should().Be("C");
+			context.Set<Email>().ToList()[2].EmailValue.Should().Be("C");
 		}
 
 		[Fact]
@@ -71,11 +71,11 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			result.Record.Should().NotBeNull();
 			context.Set<Email>().ToList()[1].ArtistId.Should().Be(1);
 			context.Set<Email>().ToList()[1].DateCreated.Should().Be(DateTime.Parse("1/1/1988 12:00:00 AM"));
-			context.Set<Email>().ToList()[1].Email1.Should().Be("B");
+			context.Set<Email>().ToList()[1].EmailValue.Should().Be("B");
 
 			result.Record.ArtistId.Should().Be(1);
 			result.Record.DateCreated.Should().Be(DateTime.Parse("1/1/1988 12:00:00 AM"));
-			result.Record.Email1.Should().Be("B");
+			result.Record.EmailValue.Should().Be("B");
 		}
 
 		[Fact]
@@ -103,12 +103,12 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			updateResponse.Record.Id.Should().Be(1);
 			context.Set<Email>().ToList()[0].ArtistId.Should().Be(1);
 			context.Set<Email>().ToList()[0].DateCreated.Should().Be(DateTime.Parse("1/1/1988 12:00:00 AM"));
-			context.Set<Email>().ToList()[0].Email1.Should().Be("B");
+			context.Set<Email>().ToList()[0].EmailValue.Should().Be("B");
 
 			updateResponse.Record.Id.Should().Be(1);
 			updateResponse.Record.ArtistId.Should().Be(1);
 			updateResponse.Record.DateCreated.Should().Be(DateTime.Parse("1/1/1988 12:00:00 AM"));
-			updateResponse.Record.Email1.Should().Be("B");
+			updateResponse.Record.EmailValue.Should().Be("B");
 		}
 
 		[Fact]
@@ -152,7 +152,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			response.Should().NotBeNull();
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 			response.Id.Should().Be(1);
 		}
 
@@ -185,7 +185,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			response.Count.Should().BeGreaterThan(0);
 			response[0].ArtistId.Should().Be(1);
 			response[0].DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response[0].Email1.Should().Be("A");
+			response[0].EmailValue.Should().Be("A");
 			response[0].Id.Should().Be(1);
 		}
 
@@ -203,7 +203,7 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 			response.Should().NotBeEmpty();
 			response[0].ArtistId.Should().Be(1);
 			response[0].DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response[0].Email1.Should().Be("A");
+			response[0].EmailValue.Should().Be("A");
 			response[0].Id.Should().Be(1);
 		}
 
@@ -244,5 +244,5 @@ namespace ArtLaShipNS.Api.Web.IntegrationTests
 }
 
 /*<Codenesium>
-    <Hash>9b22fbca6f5fdba57c403249a849ebe0</Hash>
+    <Hash>d19cbc2f8a08af68f91452f6a8c88181</Hash>
 </Codenesium>*/

@@ -21,7 +21,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 			response.Should().NotBeNull();
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 		}
 
 		[Fact]
@@ -34,7 +34,7 @@ namespace ArtLaShipNS.Api.Services.Tests
 			response.Should().NotBeNull();
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 		}
 
 		[Fact]
@@ -49,11 +49,11 @@ namespace ArtLaShipNS.Api.Services.Tests
 			patch.ApplyTo(response);
 			response.ArtistId.Should().Be(1);
 			response.DateCreated.Should().Be(DateTime.Parse("1/1/1987 12:00:00 AM"));
-			response.Email1.Should().Be("A");
+			response.EmailValue.Should().Be("A");
 		}
 	}
 }
 
 /*<Codenesium>
-    <Hash>923841f3e19a681fb5d61ff287a4734a</Hash>
+    <Hash>37ca63de058a420193aa7e6ce4b92c18</Hash>
 </Codenesium>*/

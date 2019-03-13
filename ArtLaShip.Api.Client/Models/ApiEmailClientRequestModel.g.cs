@@ -16,25 +16,25 @@ namespace ArtLaShipNS.Api.Client
 
 		public virtual void SetProperties(
 			int artistId,
-			DateTime dateCreated,
-			string email1)
+			DateTime? dateCreated,
+			string emailValue)
 		{
 			this.ArtistId = artistId;
 			this.DateCreated = dateCreated;
-			this.Email1 = email1;
+			this.EmailValue = emailValue;
 		}
 
 		[JsonProperty]
 		public int ArtistId { get; private set; }
 
 		[JsonProperty]
-		public DateTime DateCreated { get; private set; } = SqlDateTime.MinValue.Value;
+		public DateTime? DateCreated { get; private set; } = null;
 
 		[JsonProperty]
-		public string Email1 { get; private set; } = default(string);
+		public string EmailValue { get; private set; } = default(string);
 	}
 }
 
 /*<Codenesium>
-    <Hash>7a1d5074270b830f31c8f188df53abf1</Hash>
+    <Hash>b45cb72491230a1e9da05890f6be7931</Hash>
 </Codenesium>*/

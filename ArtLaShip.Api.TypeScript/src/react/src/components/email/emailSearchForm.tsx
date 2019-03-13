@@ -162,18 +162,7 @@ export default class EmailSearchComponent extends React.Component<EmailSearchCom
                 data={this.state.filteredRecords}
                 columns={[{
                     Header: 'Email',
-                    columns: [
-					  {
-                      Header: 'Artist',
-                      accessor: 'artistId',
-                      Cell: (props) => {
-                        return <a href='' onClick={(e) => { e.preventDefault(); this.props.history.push(ClientRoutes.Artists + '/' + props.original.artistId); }}>
-                          {String(
-                            props.original.artistIdNavigation.toDisplay()
-                          )}
-                        </a>
-                      }           
-                    },  {
+                    columns: [  {
                       Header: 'Date Created',
                       accessor: 'dateCreated',
                       Cell: (props) => {
@@ -181,9 +170,9 @@ export default class EmailSearchComponent extends React.Component<EmailSearchCom
                       }           
                     },  {
                       Header: 'Email',
-                      accessor: 'email1',
+                      accessor: 'emailValue',
                       Cell: (props) => {
-                      return <span>{String(props.original.email1)}</span>;
+                      return <span>{String(props.original.emailValue)}</span>;
                       }           
                     },
                     {
@@ -241,5 +230,5 @@ export default class EmailSearchComponent extends React.Component<EmailSearchCom
 export const WrappedEmailSearchComponent = Form.create({ name: 'Email Search' })(EmailSearchComponent);
 
 /*<Codenesium>
-    <Hash>ee9101357de71530c46aeca6c44b4f78</Hash>
+    <Hash>9ea6d69b2489cf87db6af9d02956afdf</Hash>
 </Codenesium>*/
