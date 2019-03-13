@@ -125,7 +125,13 @@ export default class SearchComponent extends React.Component<SearchComponentProp
 			</Row>
 			<br />
 			<br />
-         
+      <Row>
+              <Col span={12} offset={6}>  
+              <div style={{'textAlign':'center','marginTop':'50px'}}>
+                  <h3>ArtLaShip is a platform that helps fans learn about the artist in front of them</h3>
+              </div>
+        </Col>
+        </Row>
 
                   </div>);
         } 
