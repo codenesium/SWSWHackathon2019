@@ -106,7 +106,7 @@ export default class SearchComponent extends React.Component<SearchComponentProp
               <Col span={12} offset={6}>   
               <Select
               showSearch
-              placeholder="Artist name..."
+              placeholder="Artist name...Try Jake."
               defaultActiveFirstOption={false}
               showArrow={false}
               filterOption={false}
