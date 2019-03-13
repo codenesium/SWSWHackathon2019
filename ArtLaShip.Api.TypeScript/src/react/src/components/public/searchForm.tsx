@@ -11,6 +11,7 @@ import { Form, Select, Button, Input, Row, Col, Alert, Spin } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
 import Item from '../../../node_modules/antd/lib/list/Item';
 import { SelectValue } from '../../../node_modules/antd/lib/select';
+import logo from './logo.png'; 
 
 interface SearchComponentProps
 {
@@ -103,7 +104,10 @@ export default class SearchComponent extends React.Component<SearchComponentProp
        <br />
        <br />
             <Row>
-              <Col span={12} offset={6}>   
+              <Col span={12} offset={6}>  
+              <div style={{'textAlign':'center','marginBottom':'35px'}}>
+                <img src={logo} alt="Logo" /> 
+                </div>
               <Select
               showSearch
               placeholder="Artist name...Try Jake."
