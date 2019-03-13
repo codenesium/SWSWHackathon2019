@@ -31,11 +31,11 @@ export default class EmailViewModel {
   }
 
   toDisplay(): string {
-    return String(this.artistId);
+    return String(this.emailValue);
   }
 }
 
 
 /*<Codenesium>
-    <Hash>648a056347bbeac9b7d907eb795d4e20</Hash>
+    <Hash>6fac13dab72daada73196c4380e5c1bc</Hash>
 </Codenesium>*/

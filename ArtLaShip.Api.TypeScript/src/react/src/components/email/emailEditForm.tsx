@@ -209,14 +209,14 @@ class EmailEditComponent extends React.Component<
           </Form.Item>
 
           <Form.Item>
-            <label htmlFor="emailValue">Email</label>
+            <label htmlFor="emailValue">Email Value</label>
             <br />
             {getFieldDecorator('emailValue', {
               rules: [
                 { required: true, message: 'Required' },
                 { max: 128, message: 'Exceeds max length of 128' },
               ],
-            })(<Input placeholder={'Email'} />)}
+            })(<Input placeholder={'Email Value'} />)}
           </Form.Item>
 
           <Form.Item>
@@ -243,5 +243,5 @@ export const WrappedEmailEditComponent = Form.create({ name: 'Email Edit' })(
 
 
 /*<Codenesium>
-    <Hash>4c83209a854ca96bcc7b12dd04bd8d25</Hash>
+    <Hash>97c8886dc89260c7da03ad3c225c3aef</Hash>
 </Codenesium>*/

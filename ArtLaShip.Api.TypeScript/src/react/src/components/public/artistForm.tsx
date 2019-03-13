@@ -4,9 +4,10 @@ import { Constants, ApiRoutes, ClientRoutes } from '../../constants';
 import * as Api from '../../api/models';
 import ArtistMapper from '../artist/artistMapper';
 import ArtistViewModel from '../artist/artistViewModel';
-import { Col,Row, Form, Input, Button, Spin, Alert, Icon } from 'antd';
+import { Col,Row, Form, Input, Button, Spin, Alert, Icon, Select } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
 import { ActionResponse, CreateResponse } from '../../api/apiObjects';
+import StripeCheckout from 'react-stripe-checkout';
 import EmailMapper from '../email/emailMapper';
 import EmailViewModel from '../email/emailViewModel';
 	
@@ -25,8 +26,11 @@ interface ArtistComponentState {
   loaded: boolean;
   errorOccurred: boolean;
   errorMessage: string;
-  submitting:boolean;
-  submitted:boolean;
+  emailSubmitting:boolean;
+  emailSubmitted:boolean;
+  stripeSubmitting:boolean;
+  stripeSubmitted:boolean;
+  tipAmountInDollars:number;
 }
 
 class ArtistComponent extends React.Component<
@@ -39,8 +43,11 @@ ArtistComponentState
     loaded: true,
     errorOccurred: false,
     errorMessage: '',
-    submitting:false,
-    submitted:false
+    emailSubmitting:false,
+    emailSubmitted:false,
+    stripeSubmitting:false,
+    stripeSubmitted:false,
+    tipAmountInDollars:5.00
   };
 
   handleEditClick(e:any) {
@@ -49,7 +56,7 @@ ArtistComponentState
   
   handleSubmit = (value:string) => {
 
-    this.setState({ ...this.state, submitting: true, submitted: false });
+    this.setState({ ...this.state, emailSubmitting: true, emailSubmitted: false });
     this.props.form.validateFields((err: any, values: any) => {
       if (!err) {
         let model = values as EmailViewModel;
@@ -59,7 +66,7 @@ ArtistComponentState
         console.log('Received values of form: ', model);
         this.submit(model);
       } else {
-        this.setState({ ...this.state, submitting: false, submitted: false });
+        this.setState({ ...this.state, emailSubmitting: false, emailSubmitted: false });
       }
     });
   };
@@ -83,8 +90,8 @@ ArtistComponentState
           >;
           this.setState({
             ...this.state,
-            submitted: true,
-            submitting: false,
+            emailSubmitted: true,
+            emailSubmitting: false,
             errorOccurred: false,
             errorMessage: ''
           });
@@ -98,8 +105,8 @@ ArtistComponentState
           }
           this.setState({
             ...this.state,
-            submitted: true,
-            submitting: false,
+            emailSubmitted: true,
+            emailSubmitting: false,
             errorOccurred: true,
             errorMessage: 'Error from API',
           });
@@ -107,6 +114,21 @@ ArtistComponentState
       );
   };
 
+
+  onToken = (token:any) => {
+    this.setState({...this.state,stripeSubmitted:false,stripeSubmitting:false})
+    fetch(Constants.ApiEndpoint + 'payments/process', {
+      method: 'POST',
+      body: JSON.stringify(token),
+    }).then(response => {
+      response.json().then(data => {
+        this.setState({...this.state,stripeSubmitted:true,stripeSubmitting:false,errorMessage:'',errorOccurred:false})
+      }, error =>
+      {
+        this.setState({...this.state,stripeSubmitted:false,stripeSubmitting:true,errorMessage:'Error from Stripe',errorOccurred:true})
+      });
+    });
+  }
 
   componentDidMount() {
     this.setState({ ...this.state, loading: true });
@@ -162,6 +184,55 @@ ArtistComponentState
     } = this.props.form;
 
 
+    let checkout = <span></span>;
+    let email = <span></span>;
+
+    if(this.state.emailSubmitted)
+    {
+      email = <Alert type={"success"} message={"You have been subscribed!"} />;
+    }
+    else
+    {
+      email = <Input.Search
+        placeholder="Subscribe to the mailing list..."
+        enterButton={this.state.emailSubmitted ? "Submitted" : "Submit"}
+        size="large"
+        type="email"
+        disabled={this.state.emailSubmitted}
+        onSearch={(value:string) => {this.handleSubmit(value)}}
+      />;
+    }
+
+    if(this.state.stripeSubmitted)
+    {
+      checkout = <Alert type={"success"} message={"Thanks for the tip!"} />;
+    }
+    else
+    {
+      checkout = <div>
+       <Select style={{'width':'90px'}} value={this.state.tipAmountInDollars} onChange={(value) => this.setState({...this.state,tipAmountInDollars:value})}>
+          <Select.Option value={3.00}>3.00</Select.Option>
+          <Select.Option value={5.00} >5.00</Select.Option>
+          <Select.Option value={10.00}>10.00</Select.Option>
+          <Select.Option value={20.00}>20.00</Select.Option>
+          <Select.Option value={50.00}>50.00</Select.Option>
+          <Select.Option value={100.00}>100.00</Select.Option>
+          <Select.Option value={250.00}>250.00</Select.Option>
+          <Select.Option value={500.00}>500.00</Select.Option>
+        </Select> &nbsp;  &nbsp;
+         <StripeCheckout
+            token={this.onToken}
+            stripeKey="pk_test_LDwOSVOOext5rVFgnsX0b4Zy"
+            name="Tip the Artist"
+            label="Tip the Artist"
+            description={"You are awesome!"}
+            panelLabel="Tip the Artist"
+            amount={this.state.tipAmountInDollars * 100} // cents
+            currency="USD"
+          />
+      </div>;
+  }
+
     if (this.state.loading) {
       return <Spin size="large" />;
     } else if (this.state.loaded) {
@@ -181,35 +252,34 @@ ArtistComponentState
              </Col>
     </Row>
  
+
+     <Row style={{'marginBottom':'30px'}}>
+     <Col span={12} offset={6}>
+
+
+     {checkout}
+
+        </Col>
+    </Row>
+
+<br />
      <Row style={{'marginBottom':'30px'}}>
      <Col span={12} offset={6}>   
-    <Input.Search
-      placeholder="Subscribe to the mailing list..."
-      enterButton={this.state.submitted ? "Submitted" : "Submit"}
-      size="large"
-      type="email"
-      disabled={this.state.submitted}
-      onSearch={(value:string) => {this.handleSubmit(value)}}
-    />
+    {email}
     </Col>
     </Row>
 
             
-            <Row>
+      <Row>
      <Col span={12} offset={6}>  
     
              <div>
              <a href={"https://facebook.com/" + String(this.state.model!.facebook)} target="_blank"><Icon type="facebook"/>&nbsp;Facebook</a>
-						 </div>
-
-					   <div>
+             &nbsp;&nbsp;&nbsp;
              <a href={"https://soundCloud.com/" +String(this.state.model!.soundCloud)} target="_blank"><Icon type="sound"/>&nbsp;Sound Cloud</a>
-						 </div>
-
-					   <div>
+             &nbsp;&nbsp;&nbsp;
              <a href={"https://twitter.com/" +String(this.state.model!.twitter)} target="_blank"><Icon type="twitter"/>&nbsp;Twitter</a>
-						 </div>
-					   <div>
+             &nbsp;&nbsp;&nbsp;
              <a href={String(this.state.model!.website)} target="_blank"><Icon type="link"/>&nbsp;Website</a>
 						 </div>
 

@@ -143,7 +143,7 @@ export class EmailTableComponent extends React.Component<
                     },
                   },
                   {
-                    Header: 'Email',
+                    Header: 'Email Value',
                     accessor: 'emailValue',
                     Cell: props => {
                       return <span>{String(props.original.emailValue)}</span>;
@@ -194,5 +194,5 @@ export class EmailTableComponent extends React.Component<
 
 
 /*<Codenesium>
-    <Hash>7ce19844c46e50acb4c93ee4964089e2</Hash>
+    <Hash>824a3145e77883d159f2e6c9406901cd</Hash>
 </Codenesium>*/

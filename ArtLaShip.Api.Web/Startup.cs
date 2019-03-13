@@ -386,12 +386,15 @@ namespace ArtLaShipNS.Api.Web
 
             app.UseMvc();
 
-		    app.UseStaticFiles(new StaticFileOptions
-			{
-				FileProvider = new PhysicalFileProvider(
-				Path.Combine(Directory.GetCurrentDirectory(), "app")),
-				RequestPath = string.Empty
-			});
+			if(Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "app")))
+				{
+				app.UseStaticFiles(new StaticFileOptions
+				{
+					FileProvider = new PhysicalFileProvider(
+					Path.Combine(Directory.GetCurrentDirectory(), "app")),
+					RequestPath = string.Empty
+				});
+			}
 
 
             // If you want to dispose of resources that have been resolved in the

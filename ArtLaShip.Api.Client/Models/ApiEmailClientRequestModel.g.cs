@@ -28,7 +28,7 @@ namespace ArtLaShipNS.Api.Client
 		public int ArtistId { get; private set; }
 
 		[JsonProperty]
-		public DateTime? DateCreated { get; private set; } = null;
+		public DateTime? DateCreated { get; private set; } = DateTime.Now;
 
 		[JsonProperty]
 		public string EmailValue { get; private set; } = default(string);
@@ -36,5 +36,5 @@ namespace ArtLaShipNS.Api.Client
 }
 
 /*<Codenesium>
-    <Hash>b45cb72491230a1e9da05890f6be7931</Hash>
+    <Hash>f9f8dd0bc77df605a201b7f7caadd96e</Hash>
 </Codenesium>*/

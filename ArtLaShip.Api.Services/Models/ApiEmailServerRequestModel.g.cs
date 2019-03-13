@@ -30,7 +30,7 @@ namespace ArtLaShipNS.Api.Services
 		public int ArtistId { get; private set; }
 
 		[JsonProperty]
-		public DateTime? DateCreated { get; private set; } = null;
+		public DateTime? DateCreated { get; private set; } = DateTime.Now;
 
 		[Required]
 		[JsonProperty]
@@ -39,5 +39,5 @@ namespace ArtLaShipNS.Api.Services
 }
 
 /*<Codenesium>
-    <Hash>32ca10f36858e2221120c9c1b9f1d254</Hash>
+    <Hash>a2d30d3e09dfb8bc042bd68cf6632241</Hash>
 </Codenesium>*/

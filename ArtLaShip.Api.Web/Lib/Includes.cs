@@ -363,7 +363,11 @@ namespace Codenesium.Foundation.CommonMVC
 
         public virtual bool SecurityEnabled { get; set; }
 
-        public virtual JwtSettings JwtSettings { get; set; }
+		public string StripePublishableKey { get; set; }
+
+		public string StripeSecretKey { get; set; }
+
+		public virtual JwtSettings JwtSettings { get; set; }
     }
 
     public class JwtSettings

@@ -32,7 +32,7 @@ namespace ArtLaShipNS.Api.DataAccess
 		public virtual DateTime? DateCreated { get; private set; }
 
 		[MaxLength(128)]
-		[Column("email")]
+		[Column("emailValue")]
 		public virtual string EmailValue { get; private set; }
 
 		[Key]
@@ -50,5 +50,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>7c9eee31a4a59425f96c9e6bb91e9890</Hash>
+    <Hash>97bc7b697bc1c2bd67177353cd6c62f3</Hash>
 </Codenesium>*/

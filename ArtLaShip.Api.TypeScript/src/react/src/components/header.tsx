@@ -46,14 +46,20 @@ export const wrapperHeader = (
                 <Link to={'/'} />
               </MenuItem>
 
+ <MenuItem key="dashboard">
+                <Icon type="smile" />
+                <span>Dashboard</span>
+                <Link to={'/dashboard'} />
+              </MenuItem>
+
               <MenuItem key="artist">
-                <Icon type="pie-chart" />
+                <Icon type="tool" />
                 <span>Profile</span>
-                <Link to={ClientRoutes.Artists + '/edit/2'} />
+                <Link to={ClientRoutes.Artists + '/edit/1'} />
               </MenuItem>
 
               <MenuItem key="email">
-                <Icon type="cloud" />
+                <Icon type="mail" />
                 <span>Emails</span>
                 <Link to={ClientRoutes.Emails} />
               </MenuItem>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import { Constants } from '../constants';
-import { Alert } from 'antd'
+import { Alert,Statistic,Col } from 'antd'
 
 interface DashboardComponentProps{
 }
@@ -44,7 +44,11 @@ export default class Dashboard extends React.Component<DashboardComponentProps, 
   render() {
  
       return <div>
-        Welcome to your dashboard!
+   <Col span={4}>
+      <Statistic title="New Subscriptions" value={113} />
+      <br />
+      <Statistic title="New Tips" value={157} precision={2} />
+    </Col>
       </div>;
   }
 }

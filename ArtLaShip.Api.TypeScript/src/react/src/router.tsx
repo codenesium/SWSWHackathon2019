@@ -166,7 +166,7 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
             path={ClientRoutes.Emails}
             component={wrapperHeader(
               WrappedEmailSearchComponent,
-              'Email Search'
+              'Emails'
             )}
           />
         </Switch>

@@ -46,11 +46,11 @@ export default class ArtistViewModel {
   }
 
   toDisplay(): string {
-    return String(this.aspNetUserId);
+    return String(this.name);
   }
 }
 
 
 /*<Codenesium>
-    <Hash>fd5d1d190f7a6d3620cf871528325e09</Hash>
+    <Hash>3f2e749b795766343e3008de553cb2a4</Hash>
 </Codenesium>*/

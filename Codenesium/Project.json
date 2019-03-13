@@ -322,7 +322,7 @@
               },
               {
                 "$id": "38",
-                "Name": "email",
+                "Name": "emailValue",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
@@ -444,14 +444,14 @@
       {
         "$id": "51",
         "AppSchemaName": "dbo",
-        "AppSchemaId": "c06da3df-b7dd-457f-9334-79cf0620593a",
+        "AppSchemaId": "1b3c56cc-65af-4982-9f3b-662f841c571e",
         "Tables": [
           {
             "$id": "52",
             "AppTableName": "Artist",
             "AppTableNamePlural": "Artists",
             "AppDoNotProcess": false,
-            "AppTableId": "b84fcf73-5ec1-4d98-bae9-618efca171ab",
+            "AppTableId": "9f47de3c-72c8-440e-98e7-b6cec3fbce9c",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -821,7 +821,7 @@
             "AppTableName": "BankAccount",
             "AppTableNamePlural": "BankAccounts",
             "AppDoNotProcess": false,
-            "AppTableId": "eef17237-53e0-4b7e-abf1-c9a686871e27",
+            "AppTableId": "93cd50d3-84ad-4ba1-bfcc-1adcbb5cd675",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -1059,7 +1059,7 @@
             "AppTableName": "Transaction",
             "AppTableNamePlural": "Transactions",
             "AppDoNotProcess": false,
-            "AppTableId": "aa69c0e2-1f67-4a76-8a96-192a5dad3c88",
+            "AppTableId": "2d5aef5e-bc91-48b1-81e5-eba693bc3f3e",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -1330,7 +1330,7 @@
             "AppTableName": "Email",
             "AppTableNamePlural": "Emails",
             "AppDoNotProcess": false,
-            "AppTableId": "ec75cb5d-d917-42f9-bc22-7b532269c40e",
+            "AppTableId": "dbb8c481-6018-4074-8684-22efd111d5b7",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -1405,8 +1405,8 @@
                 "AppIsRequired": true,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
-                "AppName": "Email1",
-                "AppNamePlural": "Emails",
+                "AppName": "EmailValue",
+                "AppNamePlural": "EmailValues",
                 "AppFieldType": "varchar",
                 "AppFieldMaxLength": 128,
                 "AppDoNotProcess": false,
@@ -1423,9 +1423,9 @@
                 "AppViewControlType": 11,
                 "AppViewDisplayOrder": 0,
                 "AppDisplayInView": true,
-                "AppViewControlLabel": "Email",
+                "AppViewControlLabel": "Email Value",
                 "GenerationEnabled": true,
-                "Name": "email",
+                "Name": "emailValue",
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
@@ -1697,7 +1697,7 @@
         "AppAllMethodAttribute": "",
         "AppGetMethodAttribute": "",
         "AppPatchMethodAttribute": "",
-        "ForeignKeyDisplayColumn": "this.email1",
+        "ForeignKeyDisplayColumn": "this.emailValue",
         "AppViewLabel": "Email",
         "AppViewIcon": ""
       }
@@ -1862,6 +1862,26 @@
         "AppViewControlLabel": "Email",
         "AppName": "EmailValue",
         "AppNamePlural": "EmailValues"
+      },
+      {
+        "$id": "110",
+        "Table": "Email",
+        "Schema": "dbo",
+        "Column": "DateCreated",
+        "AppCLRType": "DateTime?",
+        "AppDoNotProcess": false,
+        "AppIsConcurrencyColumn": false,
+        "AppIsRequired": false,
+        "AppShowInRequestModel": true,
+        "AppShowInResponseModel": true,
+        "AppIsBooleanWithYNConversion": false,
+        "AppDefaultValue": "DateTime.Now",
+        "AppViewControlType": 3,
+        "AppViewDisplayOrder": 0,
+        "AppDisplayInView": true,
+        "AppViewControlLabel": "Date Created",
+        "AppName": "DateCreated",
+        "AppNamePlural": "DateCreateds"
       }
     ],
     "VirtualForeignKeys": [],
