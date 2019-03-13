@@ -33,24 +33,31 @@ namespace ArtLaShipNS.Api.Web
 		{
 		}
 
-		[HttpPut]
+		[HttpPost]
 		[Route("process")]
 		[UnitOfWork]
 		[ProducesResponseType(typeof(UpdateResponse<ApiArtistServerResponseModel>), 200)]
 		[ProducesResponseType(typeof(void), 404)]
 		[ProducesResponseType(typeof(ActionResponse), 422)]
 
-		public virtual async Task<IActionResult> Update(PaymentModel model)
+		public virtual async Task<IActionResult> Process(PaymentModel model)
 		{
 
-			var customers = new CustomerService();
-			var charges = new ChargeService();
+			var customers = new CustomerService(this.Settings.StripeSecretKey);
+			var charges = new ChargeService(this.Settings.StripeSecretKey);
+			var cards = new CardService(this.Settings.StripeSecretKey);
 
 			var customer = customers.Create(new CustomerCreateOptions
 			{
 				Email = model.Email,
-				SourceToken = model.StripeToken
+				SourceToken = model.Id
 			});
+
+			//var card = cards.Create(customer.Id, new CardCreateOptions()
+			//{
+			//	SourceToken = model.StripeToken 
+			//});
+
 
 			var charge = charges.Create(new ChargeCreateOptions
 			{

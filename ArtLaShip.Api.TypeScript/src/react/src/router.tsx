@@ -72,7 +72,7 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
           />
           <Route
             path={ClientRoutes.Artists + '/edit/:id'}
-            component={wrapperHeader(WrappedArtistEditComponent, 'Artist Edit')}
+            component={wrapperHeader(WrappedArtistEditComponent, 'Profile')}
           />
           <Route
             path={ClientRoutes.Artists + '/:id'}

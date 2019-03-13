@@ -116,17 +116,21 @@ ArtistComponentState
 
 
   onToken = (token:any) => {
+
+   token.amountInCEnts = this.state.tipAmountInDollars * 100;
+
     this.setState({...this.state,stripeSubmitted:false,stripeSubmitting:false})
     fetch(Constants.ApiEndpoint + 'payments/process', {
       method: 'POST',
       body: JSON.stringify(token),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     }).then(response => {
-      response.json().then(data => {
         this.setState({...this.state,stripeSubmitted:true,stripeSubmitting:false,errorMessage:'',errorOccurred:false})
       }, error =>
       {
         this.setState({...this.state,stripeSubmitted:false,stripeSubmitting:true,errorMessage:'Error from Stripe',errorOccurred:true})
-      });
     });
   }
 
