@@ -101,13 +101,12 @@ export default class SearchComponent extends React.Component<SearchComponentProp
      <div>
        <br />
        <br />
-       <h2 style={{'textAlign':'center'}}>ArtLaShip</h2>
        <br />
             <Row>
               <Col span={12} offset={6}>   
               <Select
               showSearch
-              placeholder="Search for an artist..."
+              placeholder="Artist name..."
               defaultActiveFirstOption={false}
               showArrow={false}
               filterOption={false}
