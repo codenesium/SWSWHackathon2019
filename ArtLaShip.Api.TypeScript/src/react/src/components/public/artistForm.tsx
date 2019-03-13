@@ -249,7 +249,7 @@ ArtistComponentState
 						 </div>
 
      <Row style={{'marginBottom':'30px'}}>
-     <Col span={12} offset={6}>  
+     <Col span={20} offset={2}>  
 						 <div style={{'textAlign':'left'}}>
 							<p>{String(this.state.model!.bio || '')}</p>
 						 </div>
@@ -258,7 +258,7 @@ ArtistComponentState
  
 
      <Row style={{'marginBottom':'30px'}}>
-     <Col span={12} offset={6}>
+     <Col span={20} offset={2}>
 
 
      {checkout}
@@ -268,14 +268,14 @@ ArtistComponentState
 
 <br />
      <Row style={{'marginBottom':'30px'}}>
-     <Col span={12} offset={6}>   
+     <Col span={20} offset={2}>   
     {email}
     </Col>
     </Row>
 
             
       <Row>
-     <Col span={12} offset={6}>  
+     <Col span={20} offset={2}>  
     
              <div>
              <span><Icon type="dollar"/>&nbsp;Venmo @{this.state.model!.venmo}</span>
