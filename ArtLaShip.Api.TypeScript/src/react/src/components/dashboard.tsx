@@ -2,7 +2,7 @@ import * as React from 'react';
 import axios from 'axios';
 import { Constants } from '../constants';
 import { Alert,Statistic,Col } from 'antd'
-
+import logo from './public/qr.png'; 
 interface DashboardComponentProps{
 }
 
@@ -48,6 +48,11 @@ export default class Dashboard extends React.Component<DashboardComponentProps, 
       <Statistic title="New Subscriptions" value={113} />
       <br />
       <Statistic title="New Tips" value={157} precision={2} />
+      <br />
+
+      <div>
+      <img src={logo} alt="Logo" width={150} /> 
+      </div>
     </Col>
       </div>;
   }
