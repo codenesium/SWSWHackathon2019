@@ -12,9 +12,14 @@ interface WrapperHeaderProps {}
 interface WrapperHeaderState {
   collapsed: boolean;
 }
-export const wrapperHeader = (Component: React.ComponentClass<any> | React.SFC<any>,
-displayName:string) => {
-  class WrapperHeaderComponent extends React.Component<WrapperHeaderProps & RouteComponentProps, WrapperHeaderState> {
+export const wrapperHeader = (
+  Component: React.ComponentClass<any> | React.SFC<any>,
+  displayName: string
+) => {
+  class WrapperHeaderComponent extends React.Component<
+    WrapperHeaderProps & RouteComponentProps,
+    WrapperHeaderState
+  > {
     state = { collapsed: true };
 
     onCollapse = () => {
@@ -30,54 +35,46 @@ displayName:string) => {
           >
             <div className="logo" />
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-               <MenuItem
+              <MenuItem
                 key="Home"
-				onClick={() =>  {this.setState({...this.state, collapsed:true})}}
+                onClick={() => {
+                  this.setState({ ...this.state, collapsed: true });
+                }}
               >
                 <Icon type="home" />
                 <span>Home</span>
-                <Link to={'/'}></Link>
+                <Link to={'/'} />
               </MenuItem>
 
-			   			   <MenuItem
-                key="artist"
-              >
-			  <Icon type="pie-chart" />
-              <span>Artist</span>
-              <Link to={ClientRoutes.Artists}></Link>
+              <MenuItem key="artist">
+                <Icon type="pie-chart" />
+                <span>Artist</span>
+                <Link to={ClientRoutes.Artists} />
               </MenuItem>
 
-							   <MenuItem
-                key="bankAccount"
-              >
-			  <Icon type="rise" />
-              <span>Bank Account</span>
-              <Link to={ClientRoutes.BankAccounts}></Link>
+              <MenuItem key="bankAccount">
+                <Icon type="rise" />
+                <span>Bank Account</span>
+                <Link to={ClientRoutes.BankAccounts} />
               </MenuItem>
 
-							   <MenuItem
-                key="transaction"
-              >
-			  <Icon type="bars" />
-              <span>Transaction</span>
-              <Link to={ClientRoutes.Transactions}></Link>
+              <MenuItem key="transaction">
+                <Icon type="bars" />
+                <span>Transaction</span>
+                <Link to={ClientRoutes.Transactions} />
               </MenuItem>
 
-							   <MenuItem
-                key="email"
-              >
-			  <Icon type="cloud" />
-              <span>Email</span>
-              <Link to={ClientRoutes.Emails}></Link>
+              <MenuItem key="email">
+                <Icon type="cloud" />
+                <span>Email</span>
+                <Link to={ClientRoutes.Emails} />
               </MenuItem>
-
-				
             </Menu>
           </Sider>
           <Layout>
             <Content style={{ margin: '0 16px' }}>
-            <h2>{displayName}</h2>
-			  <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+              <h2>{displayName}</h2>
+              <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                 <Component {...this.props} />
               </div>
             </Content>
@@ -90,6 +87,7 @@ displayName:string) => {
   return WrapperHeaderComponent;
 };
 
+
 /*<Codenesium>
-    <Hash>e902df3e9da2b39dffb32018f3c67c90</Hash>
+    <Hash>926a30d94cca0046af2e1f95fbc89147</Hash>
 </Codenesium>*/

@@ -6,9 +6,12 @@ import ArtistMapper from './artistMapper';
 import ArtistViewModel from './artistViewModel';
 import { Form, Input, Button, Spin, Alert } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
-import { BankAccountTableComponent } from '../shared/bankAccountTable';
-import { EmailTableComponent } from '../shared/emailTable';
-import { TransactionTableComponent } from '../shared/transactionTable';
+import {BankAccountTableComponent} from '../shared/bankAccountTable'
+	import {EmailTableComponent} from '../shared/emailTable'
+	import {TransactionTableComponent} from '../shared/transactionTable'
+	
+
+
 
 interface ArtistDetailComponentProps {
   form: WrappedFormUtils;
@@ -25,23 +28,21 @@ interface ArtistDetailComponentState {
 }
 
 class ArtistDetailComponent extends React.Component<
-  ArtistDetailComponentProps,
-  ArtistDetailComponentState
+ArtistDetailComponentProps,
+ArtistDetailComponentState
 > {
   state = {
     model: new ArtistViewModel(),
     loading: false,
     loaded: true,
     errorOccurred: false,
-    errorMessage: '',
+    errorMessage: ''
   };
 
-  handleEditClick(e: any) {
-    this.props.history.push(
-      ClientRoutes.Artists + '/edit/' + this.state.model!.id
-    );
+  handleEditClick(e:any) {
+    this.props.history.push(ClientRoutes.Artists + '/edit/' + this.state.model!.id);
   }
-
+  
   componentDidMount() {
     this.setState({ ...this.state, loading: true });
 
@@ -87,104 +88,86 @@ class ArtistDetailComponent extends React.Component<
   }
 
   render() {
+    
     let message: JSX.Element = <div />;
     if (this.state.errorOccurred) {
       message = <Alert message={this.state.errorMessage} type="error" />;
-    }
-
+    } 
+  
     if (this.state.loading) {
       return <Spin size="large" />;
     } else if (this.state.loaded) {
       return (
         <div>
-          <Button
-            style={{ float: 'right' }}
-            type="primary"
-            onClick={(e: any) => {
-              this.handleEditClick(e);
-            }}
-          >
-            <i className="fas fa-edit" />
-          </Button>
-          <div>
-            <div>
-              <h3>Asp Net User</h3>
-              <p>{String(this.state.model!.aspNetUserId)}</p>
-            </div>
-            <div>
-              <h3>Bio</h3>
-              <p>{String(this.state.model!.bio)}</p>
-            </div>
-            <div>
-              <h3>Facebook</h3>
-              <p>{String(this.state.model!.facebook)}</p>
-            </div>
-            <div>
-              <h3>Name</h3>
-              <p>{String(this.state.model!.name)}</p>
-            </div>
-            <div>
-              <h3>Sound Cloud</h3>
-              <p>{String(this.state.model!.soundCloud)}</p>
-            </div>
-            <div>
-              <h3>Twitter</h3>
-              <p>{String(this.state.model!.twitter)}</p>
-            </div>
-            <div>
-              <h3>Website</h3>
-              <p>{String(this.state.model!.website)}</p>
-            </div>
-          </div>
+		<Button 
+			style={{'float':'right'}}
+			type="primary" 
+			onClick={(e:any) => {
+				this.handleEditClick(e)
+				}}
+			>
+             <i className="fas fa-edit" />
+		  </Button>
+		  <div>
+									 <div>
+							<h3>Asp Net User</h3>
+							<p>{String(this.state.model!.aspNetUserId)}</p>
+						 </div>
+					   						 <div>
+							<h3>Bio</h3>
+							<p>{String(this.state.model!.bio)}</p>
+						 </div>
+					   						 <div>
+							<h3>Facebook</h3>
+							<p>{String(this.state.model!.facebook)}</p>
+						 </div>
+					   						 <div>
+							<h3>Name</h3>
+							<p>{String(this.state.model!.name)}</p>
+						 </div>
+					   						 <div>
+							<h3>Sound Cloud</h3>
+							<p>{String(this.state.model!.soundCloud)}</p>
+						 </div>
+					   						 <div>
+							<h3>Twitter</h3>
+							<p>{String(this.state.model!.twitter)}</p>
+						 </div>
+					   						 <div>
+							<h3>Website</h3>
+							<p>{String(this.state.model!.website)}</p>
+						 </div>
+					   		  </div>
           {message}
-          <div>
+		 <div>
             <h3>BankAccounts</h3>
-            <BankAccountTableComponent
-              id={this.state.model!.id}
-              history={this.props.history}
-              match={this.props.match}
-              apiRoute={
-                Constants.ApiEndpoint +
-                ApiRoutes.Artists +
-                '/' +
-                this.state.model!.id +
-                '/' +
-                ApiRoutes.BankAccounts
-              }
-            />
-          </div>
-          <div>
+            <BankAccountTableComponent 
+			id={this.state.model!.id} 
+			history={this.props.history} 
+			match={this.props.match} 
+			apiRoute={Constants.ApiEndpoint + ApiRoutes.Artists + '/' + this.state.model!.id + '/' + ApiRoutes.BankAccounts}
+			/>
+         </div>
+			 <div>
             <h3>Emails</h3>
-            <EmailTableComponent
-              id={this.state.model!.id}
-              history={this.props.history}
-              match={this.props.match}
-              apiRoute={
-                Constants.ApiEndpoint +
-                ApiRoutes.Artists +
-                '/' +
-                this.state.model!.id +
-                '/' +
-                ApiRoutes.Emails
-              }
-            />
-          </div>
-          <div>
+            <EmailTableComponent 
+			id={this.state.model!.id} 
+			history={this.props.history} 
+			match={this.props.match} 
+			apiRoute={Constants.ApiEndpoint + ApiRoutes.Artists + '/' + this.state.model!.id + '/' + ApiRoutes.Emails}
+			/>
+         </div>
+			 <div>
             <h3>Transactions</h3>
-            <TransactionTableComponent
-              id={this.state.model!.id}
-              history={this.props.history}
-              match={this.props.match}
-              apiRoute={
-                Constants.ApiEndpoint +
-                ApiRoutes.Artists +
-                '/' +
-                this.state.model!.id +
-                '/' +
-                ApiRoutes.Transactions
-              }
-            />
-          </div>
+            <TransactionTableComponent 
+			id={this.state.model!.id} 
+			history={this.props.history} 
+			match={this.props.match} 
+			apiRoute={Constants.ApiEndpoint + ApiRoutes.Artists + '/' + this.state.model!.id + '/' + ApiRoutes.Transactions}
+			/>
+         </div>
+	
+
         </div>
       );
     } else {
@@ -193,11 +176,10 @@ class ArtistDetailComponent extends React.Component<
   }
 }
 
-export const WrappedArtistDetailComponent = Form.create({
-  name: 'Artist Detail',
-})(ArtistDetailComponent);
-
+export const WrappedArtistDetailComponent = Form.create({ name: 'Artist Detail' })(
+  ArtistDetailComponent
+);
 
 /*<Codenesium>
-    <Hash>7751142bb19ea80d3aa099eaa7070161</Hash>
+    <Hash>fd4d48e9e727e5f960cb1f0d497c9a6f</Hash>
 </Codenesium>*/

@@ -37,7 +37,7 @@ namespace ArtLaShipNS.Api.DataAccess
 				return this.Where(x =>
 				                  x.AspNetUserId.StartsWith(query) ||
 				                  x.Bio.StartsWith(query) ||
-				                  x.ExternalId == query.ToGuid() ||
+				                  x.ExternalId == query.ToNullableGuid() ||
 				                  x.Facebook.StartsWith(query) ||
 				                  x.Id == query.ToInt() ||
 				                  x.Name.StartsWith(query) ||
@@ -144,5 +144,5 @@ namespace ArtLaShipNS.Api.DataAccess
 }
 
 /*<Codenesium>
-    <Hash>3c1be637d2777f02861e0dad7a349ed3</Hash>
+    <Hash>02ccd66a12c998e312eb41507d0e336b</Hash>
 </Codenesium>*/

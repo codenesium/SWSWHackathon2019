@@ -6,11 +6,11 @@ import EmailMapper from '../email/emailMapper';
 import EmailViewModel from '../email/emailViewModel';
 import { Form, Input, Button, Spin, Alert } from 'antd';
 import { WrappedFormUtils } from 'antd/es/form/Form';
-import ReactTable from 'react-table';
+import ReactTable from "react-table";
 
 interface EmailTableComponentProps {
-  id: number;
-  apiRoute: string;
+  id:number,
+  apiRoute:string;
   history: any;
   match: any;
 }
@@ -20,42 +20,44 @@ interface EmailTableComponentState {
   loaded: boolean;
   errorOccurred: boolean;
   errorMessage: string;
-  filteredRecords: Array<EmailViewModel>;
+  filteredRecords : Array<EmailViewModel>;
 }
 
-export class EmailTableComponent extends React.Component<
-  EmailTableComponentProps,
-  EmailTableComponentState
+export class  EmailTableComponent extends React.Component<
+EmailTableComponentProps,
+EmailTableComponentState
 > {
   state = {
     loading: false,
     loaded: true,
     errorOccurred: false,
     errorMessage: '',
-    filteredRecords: [],
+    filteredRecords:[]
   };
 
-  handleEditClick(e: any, row: EmailViewModel) {
-    this.props.history.push(ClientRoutes.Emails + '/edit/' + row.id);
-  }
+handleEditClick(e:any, row: EmailViewModel) {
+  this.props.history.push(ClientRoutes.Emails + '/edit/' + row.id);
+}
 
-  handleDetailClick(e: any, row: EmailViewModel) {
-    this.props.history.push(ClientRoutes.Emails + '/' + row.id);
-  }
+ handleDetailClick(e:any, row: EmailViewModel) {
+   this.props.history.push(ClientRoutes.Emails + '/' + row.id);
+ }
 
   componentDidMount() {
-    this.loadRecords();
+	this.loadRecords();
   }
 
   loadRecords() {
     this.setState({ ...this.state, loading: true });
 
     axios
-      .get(this.props.apiRoute, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .get(this.props.apiRoute,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then(
         resp => {
           let response = resp.data as Array<Api.EmailClientResponseModel>;
@@ -63,11 +65,12 @@ export class EmailTableComponent extends React.Component<
           console.log(response);
 
           let mapper = new EmailMapper();
+          
+          let emails:Array<EmailViewModel> = [];
 
-          let emails: Array<EmailViewModel> = [];
-
-          response.forEach(x => {
-            emails.push(mapper.mapApiResponseToViewModel(x));
+          response.forEach(x =>
+          {
+              emails.push(mapper.mapApiResponseToViewModel(x));
           });
           this.setState({
             ...this.state,
@@ -92,71 +95,58 @@ export class EmailTableComponent extends React.Component<
   }
 
   render() {
-    let message: JSX.Element = <div />;
+    
+	let message: JSX.Element = <div />;
     if (this.state.errorOccurred) {
       message = <Alert message={this.state.errorMessage} type="error" />;
     }
 
     if (this.state.loading) {
-      return <Spin size="large" />;
-    } else if (this.state.errorOccurred) {
-      return <Alert message={this.state.errorMessage} type="error" />;
-    } else if (this.state.loaded) {
+       return <Spin size="large" />;
+    }
+	else if (this.state.errorOccurred) {
+	  return <Alert message={this.state.errorMessage} type='error' />;
+	}
+	 else if (this.state.loaded) {
       return (
-        <div>
-          {message}
-          <ReactTable
-            data={this.state.filteredRecords}
-            defaultPageSize={10}
-            columns={[
-              {
-                Header: 'Emails',
-                columns: [
-                  {
-                    Header: 'Artist',
-                    accessor: 'artistId',
-                    Cell: props => {
-                      return (
-                        <a
-                          href=""
-                          onClick={e => {
-                            e.preventDefault();
-                            this.props.history.push(
-                              ClientRoutes.Artists +
-                                '/' +
-                                props.original.artistId
-                            );
-                          }}
-                        >
+	  <div>
+		{message}
+         <ReactTable 
+                data={this.state.filteredRecords}
+				defaultPageSize={10}
+                columns={[{
+                    Header: 'Emails',
+                    columns: [
+					  {
+                      Header: 'Artist',
+                      accessor: 'artistId',
+                      Cell: (props) => {
+                        return <a href='' onClick={(e) => { e.preventDefault(); this.props.history.push(ClientRoutes.Artists + '/' + props.original.artistId); }}>
                           {String(
                             props.original.artistIdNavigation.toDisplay()
                           )}
                         </a>
-                      );
-                    },
-                  },
-                  {
-                    Header: 'Date Created',
-                    accessor: 'dateCreated',
-                    Cell: props => {
+                      }           
+                    },  {
+                      Header: 'Date Created',
+                      accessor: 'dateCreated',
+                      Cell: (props) => {
                       return <span>{String(props.original.dateCreated)}</span>;
-                    },
-                  },
-                  {
-                    Header: 'Email',
-                    accessor: 'email1',
-                    Cell: props => {
+                      }           
+                    },  {
+                      Header: 'Email',
+                      accessor: 'email1',
+                      Cell: (props) => {
                       return <span>{String(props.original.email1)}</span>;
+                      }           
                     },
-                  },
-                  {
-                    Header: 'Actions',
-                    minWidth: 150,
-                    Cell: row => (
-                      <div>
-                        <Button
-                          type="primary"
-                          onClick={(e: any) => {
+                    {
+                        Header: 'Actions',
+					    minWidth:150,
+                        Cell: row => (<div>
+					    <Button
+                          type="primary" 
+                          onClick={(e:any) => {
                             this.handleDetailClick(
                               e,
                               row.original as EmailViewModel
@@ -167,8 +157,8 @@ export class EmailTableComponent extends React.Component<
                         </Button>
                         &nbsp;
                         <Button
-                          type="primary"
-                          onClick={(e: any) => {
+                          type="primary" 
+                          onClick={(e:any) => {
                             this.handleEditClick(
                               e,
                               row.original as EmailViewModel
@@ -177,14 +167,11 @@ export class EmailTableComponent extends React.Component<
                         >
                           <i className="fas fa-edit" />
                         </Button>
-                      </div>
-                    ),
-                  },
-                ],
-              },
-            ]}
-          />
-        </div>
+                        </div>)
+                    }],
+                    
+                  }]} />
+			</div>
       );
     } else {
       return null;
@@ -192,7 +179,6 @@ export class EmailTableComponent extends React.Component<
   }
 }
 
-
 /*<Codenesium>
-    <Hash>992691f25b5627544872370aca24ceaf</Hash>
+    <Hash>f8a85bdeb69361f8c7afec12c7d7ffea</Hash>
 </Codenesium>*/

@@ -30,7 +30,7 @@
                 "DataType": "uniqueidentifier",
                 "NumericPrecision": 0,
                 "MaxLength": 0,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -48,7 +48,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 8000,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -57,7 +57,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -66,7 +66,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -75,7 +75,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -84,7 +84,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -93,7 +93,7 @@
                 "DataType": "nvarchar",
                 "NumericPrecision": 0,
                 "MaxLength": 450,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               }
             ],
@@ -444,20 +444,20 @@
       {
         "$id": "51",
         "AppSchemaName": "dbo",
-        "AppSchemaId": "6dbb7358-2d84-438e-97fa-52e2d7342a91",
+        "AppSchemaId": "a09073d9-5d56-4e98-b6f6-7b323edb1760",
         "Tables": [
           {
             "$id": "52",
             "AppTableName": "Artist",
             "AppTableNamePlural": "Artists",
             "AppDoNotProcess": false,
-            "AppTableId": "8a5f0bc0-594a-43a1-96db-77a56a823455",
+            "AppTableId": "1bdb2729-36cf-4be7-bf1a-1337ca9d2225",
             "AppGenerationEnabled": true,
             "Columns": [
               {
                 "$id": "53",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "AspNetUserId",
@@ -466,7 +466,7 @@
                 "AppFieldMaxLength": 450,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -484,13 +484,13 @@
                 "DataType": "nvarchar",
                 "NumericPrecision": 0,
                 "MaxLength": 450,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
                 "$id": "54",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "Bio",
@@ -499,7 +499,7 @@
                 "AppFieldMaxLength": 8000,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -517,13 +517,13 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 8000,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
                 "$id": "55",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "ExternalId",
@@ -532,9 +532,9 @@
                 "AppFieldMaxLength": 0,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
-                "AppCLRType": "Guid",
+                "AppCLRType": "Guid?",
                 "AppTypescriptType": "any",
                 "AppIsConcurrencyColumn": false,
                 "Table": {
@@ -550,13 +550,13 @@
                 "DataType": "uniqueidentifier",
                 "NumericPrecision": 0,
                 "MaxLength": 0,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
                 "$id": "56",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "Facebook",
@@ -565,7 +565,7 @@
                 "AppFieldMaxLength": 128,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -583,7 +583,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
@@ -655,7 +655,7 @@
               {
                 "$id": "59",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "SoundCloud",
@@ -664,7 +664,7 @@
                 "AppFieldMaxLength": 128,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -682,13 +682,13 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
                 "$id": "60",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "Twitter",
@@ -697,7 +697,7 @@
                 "AppFieldMaxLength": 128,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -715,13 +715,13 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               },
               {
                 "$id": "61",
                 "AppIsBooleanWithYNConversion": false,
-                "AppIsRequired": true,
+                "AppIsRequired": false,
                 "AppShowInRequestModel": true,
                 "AppShowInResponseModel": true,
                 "AppName": "Website",
@@ -730,7 +730,7 @@
                 "AppFieldMaxLength": 128,
                 "AppDoNotProcess": false,
                 "AppGenerationEnabled": true,
-                "AppIsNullable": false,
+                "AppIsNullable": true,
                 "AppFieldId": "00000000-0000-0000-0000-000000000000",
                 "AppCLRType": "string",
                 "AppTypescriptType": "string",
@@ -748,7 +748,7 @@
                 "DataType": "varchar",
                 "NumericPrecision": 0,
                 "MaxLength": 128,
-                "IsNullable": false,
+                "IsNullable": true,
                 "DatabaseGenerated": false
               }
             ],
@@ -821,7 +821,7 @@
             "AppTableName": "BankAccount",
             "AppTableNamePlural": "BankAccounts",
             "AppDoNotProcess": false,
-            "AppTableId": "3130da28-4001-4d09-bf3e-3be4e23f0621",
+            "AppTableId": "49614017-d20d-4f00-8e44-44a9e334bf94",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -1059,7 +1059,7 @@
             "AppTableName": "Transaction",
             "AppTableNamePlural": "Transactions",
             "AppDoNotProcess": false,
-            "AppTableId": "a395a4ed-09f7-4258-8f63-7fa1f2257090",
+            "AppTableId": "276a1373-4fa8-4233-986b-5eb453bfa325",
             "AppGenerationEnabled": true,
             "Columns": [
               {
@@ -1330,7 +1330,7 @@
             "AppTableName": "Email",
             "AppTableNamePlural": "Emails",
             "AppDoNotProcess": false,
-            "AppTableId": "572442b7-68c0-44a6-a48c-dfd027625f95",
+            "AppTableId": "1a3122a3-e487-4344-9b01-dc46c860660f",
             "AppGenerationEnabled": true,
             "Columns": [
               {

@@ -41,6 +41,14 @@ export const wrapperPublicMenu = (
                 <span>Home</span>
                 <Link to={'/'} />
               </MenuItem>
+             
+              <MenuItem
+                key="admin"
+              >
+			  <Icon type="rise" />
+              <span>Admin</span>
+              <Link to={'/admin'}></Link>
+              </MenuItem>
             </Menu>
 
           <Layout>

@@ -23,3 +23,7 @@ code {
 .search-create-button {
 	margin-top:10px;
 }
+
+.ant-layout {
+  background:#FFF;
+}

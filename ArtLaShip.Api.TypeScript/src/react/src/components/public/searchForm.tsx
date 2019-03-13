@@ -39,12 +39,11 @@ export default class SearchComponent extends React.Component<SearchComponentProp
     state = ({placeHolder:'Enter an artist...', deleteSubmitted:false, deleteSuccess:false, deleteResponse:'', records:new Array<ArtistViewModel>(), filteredRecords:new Array<ArtistViewModel>(), searchValue:'', loading:false, loaded:true, errorOccurred:false, errorMessage:''});
     
     componentDidMount () {
-        this.loadRecords();
+ 
     }
 
-
     handleChange(id:SelectValue) {
-      this.props.history.push(ClientRoutes.Artists + '/' + id.valueOf());
+      this.props.history.push('/artist/' + id.valueOf());
      }
 
    handleSearchChanged(e:string) {
@@ -96,10 +95,12 @@ export default class SearchComponent extends React.Component<SearchComponentProp
             return <Alert message={this.state.errorMessage} type="error" />
         }
       
-        const options = this.state.records.map((item,i) => { return <option key={String(item.id)}>{item.name}</option>});
+        const options = this.state.records.map((item,i) => { return <Select.Option key={String(item.id)}>{item.name}</Select.Option>});
             
 			return (
      <div>
+       <br />
+       <br />
        <h2 style={{'textAlign':'center'}}>ArtLaShip</h2>
        <br />
             <Row>

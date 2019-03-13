@@ -52,6 +52,12 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
             component={wrapperPublicMenu(WrappedSearchComponent, 'Public Search')}
           />
 
+              <Route
+            exact
+            path="/admin"
+            component={wrapperHeader(Dashboard, 'Admin')}
+          />
+
           <Route
             exact
             path="/artist/:id"
