@@ -245,7 +245,7 @@ class ArtistEditComponent extends React.Component<
               ( <Input placeholder={"Website"}  /> )}
               </Form.Item>
 
-			<br />
+		      	<br />
             <Form.Item>
              <Button type="primary" htmlType="submit" loading={this.state.submitting} >
                 {(this.state.submitting ? "Submitting..." : "Submit")}

@@ -248,16 +248,16 @@ ArtistComponentState
 							<h1>{String(this.state.model!.name)}</h1>
 						 </div>
 
-     <Row style={{'marginBottom':'30px'}}>
+     <Row style={{'textAlign':'center','marginBottom':'30px'}}>
      <Col span={20} offset={2}>  
-						 <div style={{'textAlign':'left'}}>
+						 <div>
 							<p>{String(this.state.model!.bio || '')}</p>
 						 </div>
              </Col>
     </Row>
  
 
-     <Row style={{'marginBottom':'30px'}}>
+     <Row style={{'textAlign':'center','marginBottom':'30px'}}>
      <Col span={20} offset={2}>
 
 
@@ -279,17 +279,18 @@ ArtistComponentState
     
              <div>
              <span><Icon type="dollar"/>&nbsp;Venmo @{this.state.model!.venmo}</span>
-             <br />
+             &nbsp;&nbsp;&nbsp;
+             <a href={String(this.state.model!.website)} target="_blank"><Icon type="link"/>&nbsp;Website</a>
+						 <br />
              <a href={"https://facebook.com/" + String(this.state.model!.facebook)} target="_blank"><Icon type="facebook"/>&nbsp;Facebook</a>
              &nbsp;&nbsp;&nbsp;
              <a href={"https://soundCloud.com/" +String(this.state.model!.soundCloud)} target="_blank"><Icon type="sound"/>&nbsp;Sound Cloud</a>
              &nbsp;&nbsp;&nbsp;
              <a href={"https://twitter.com/" +String(this.state.model!.twitter)} target="_blank"><Icon type="twitter"/>&nbsp;Twitter</a>
-             &nbsp;&nbsp;&nbsp;
-             <a href={String(this.state.model!.website)} target="_blank"><Icon type="link"/>&nbsp;Website</a>
-						 </div>
+ 
+             </div>
 
-                          </Col>
+               </Col>
               </Row>
 					  </div>
          </div>
