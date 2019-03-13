@@ -44,7 +44,7 @@ export default class Dashboard extends React.Component<DashboardComponentProps, 
   render() {
  
       return <div>
-   <Col span={4}>
+   <Col span={12}>
       <Statistic title="New Subscriptions" value={113} />
       <br />
       <Statistic title="New Tips" value={157} precision={2} />
