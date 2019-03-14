@@ -13,16 +13,16 @@ Some things it's missing.
 
 
 Users serach for artists by name.
-![alt text](documentation.Homepage.PNG "Homepage")
+![alt text](documentation/Homepage.PNG "Homepage")
 
 Users can view a artist's bio, tip the band, subscribe to the email list and view links to the artist's websites.
-![alt text](documentation.Artist.PNG "Artist")
+![alt text](documentation/Artist.PNG "Artist")
 
 The artist dashboard shows their new subscriptions and new tips and also shows a QR code they can download to print off and stick on gear that redirects users to their profile page.
-![alt text](documentation.Dashboard.PNG "Dashboard")
+![alt text](documentation/Dashboard.PNG "Dashboard")
 
 This page shows their subscriptions.
-![alt text](documentation.Emails.PNG "Emails")
+![alt text](documentation/Emails.PNG "Emails")
 
 Let's the artist edit their profile.
-![alt text](documentation.Profile.PNG "Profile")
+![alt text](documentation/Profile.PNG "Profile")
